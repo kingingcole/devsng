@@ -1,33 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Link} from 'gatsby'
 
-const PostCard = ({title, description}) => {
+const PostCard = ({title, description, slug}) => {
   return(
       <div className="row">
         <div className="col-9">
-          <Title>{title}</Title>
-          <Description>
-            <p>
-              dangerouslySetInnerHTML={{
+          <Link to={slug} style={titleStyle}>{title}</Link>
+          <Description
+            dangerouslySetInnerHTML={{
               __html: description,
             }}
-            </p>
-          </Description>
+          />
         </div>
       </div>
   )
 }
 
-const Title = styled.a`
-  font-family: Fira Sans;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 32px;
-  color: #14957D;
-`
+const titleStyle = {
+  fontFamily: 'Fira Sans',
+  fontStyle: 'normal',
+  fontWeight: '800',
+  fontSize: '24px',
+  lineHeight: '32px',
+  color: '#14957D',
+  textDecoration: 'none',
+  boxShadow: 'none',
+  textTransform: 'capitalize'
+}
+
 const Description = styled.p`
-font-size: 20px;
+font-size: 16px;
 line-height: 29px;
 color: #4D4141;
 `

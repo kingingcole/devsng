@@ -19,11 +19,7 @@ class Layout extends React.Component {
         }}
       >
         <main style={{marginTop: '70px'}}>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+
       </div>
         </>
     )
