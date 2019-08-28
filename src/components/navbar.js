@@ -31,7 +31,6 @@ const NavBar = styled.nav`
   padding: 13px 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 18px;
-  border-bottom: 1px solid lightgray;
   position: fixed;
   width: 100%;
   top: 0;
