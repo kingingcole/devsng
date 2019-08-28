@@ -31,13 +31,15 @@ const titleStyle = {
   color: '#14957D',
   textDecoration: 'none',
   boxShadow: 'none',
-  textTransform: 'capitalize'
+  textTransform: 'capitalize',
+  marginBottom: '5px'
 }
 
 const Description = styled.p`
 font-size: 16px;
-line-height: 29px;
+line-height: 1.5em;
 color: #4D4141;
+
 `
 
 export default PostCard

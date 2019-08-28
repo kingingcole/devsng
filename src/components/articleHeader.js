@@ -14,10 +14,10 @@ const ArticleHeader = () => {
 const HeaderWrapper = styled.div`
   padding: 20px 0;
   background: #14957D;
+  font-family: 'Fira Sans', sans-serif;
 `
 
 const LargeText = styled.h1` 
-  font-family: Fira Sans;
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
@@ -26,7 +26,6 @@ const LargeText = styled.h1`
   color: #FFFFFF;
 `
 const SmallText = styled.p`
-  font-family: Fira Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
