@@ -4,7 +4,7 @@ import {Link} from 'gatsby'
 
 const PostCard = ({title, description, slug}) => {
   return(
-      <div className="row">
+      <PostCardWrapper className="row">
         <div className="col-9">
           <Link to={slug} style={titleStyle}>{title}</Link>
           <Description
@@ -13,9 +13,14 @@ const PostCard = ({title, description, slug}) => {
             }}
           />
         </div>
-      </div>
+      </PostCardWrapper>
   )
 }
+
+const PostCardWrapper = styled.div`
+  border-bottom: 1px solid #7E847F;
+  padding: 10px 0
+`
 
 const titleStyle = {
   fontFamily: 'Fira Sans',
