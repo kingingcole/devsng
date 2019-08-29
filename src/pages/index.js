@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 const PostsWrapper = styled.div`
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   padding: 30px 10px
 `
@@ -25,15 +25,16 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <ArticleHeader/>
-        <PostsWrapper>
+        <PostsWrapper className={`container`}>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             const description = node.frontmatter.description || node.excerpt
             const {slug} = node.fields
             const {date} = node.frontmatter
+            const readingTime = node.fields.readingTime.text;
 
             return (
-              <PostCard key={slug} description={description} title={title} date={date}/>
+              <PostCard key={slug} description={description} title={title} date={date} slug={slug} readingTime={readingTime}/>
             )
           })}
         </PostsWrapper>
@@ -57,6 +58,9 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")

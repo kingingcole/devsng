@@ -15,6 +15,7 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
+          overflow: 'hidden'
           // padding: `0 ${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
