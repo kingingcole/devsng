@@ -32,14 +32,16 @@ const titleStyle = {
   textDecoration: 'none',
   boxShadow: 'none',
   textTransform: 'capitalize',
-  marginBottom: '5px'
+  marginBottom: '10px'
 }
 
 const Description = styled.p`
-font-size: 16px;
+font-size: 20px;
 line-height: 1.5em;
 color: #4D4141;
 
 `
 
 export default PostCard
+
+/* Line */
