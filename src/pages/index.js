@@ -32,9 +32,22 @@ class BlogIndex extends React.Component {
             const {slug} = node.fields
             const {date} = node.frontmatter
             const readingTime = node.fields.readingTime.text;
+            const {featuredImage} = node.frontmatter;
+            let image;
+            if (featuredImage){
+              image = node.frontmatter.featuredImage.childImageSharp.fluid
+            }
 
             return (
-              <PostCard key={slug} description={description} title={title} date={date} slug={slug} readingTime={readingTime}/>
+              <PostCard
+                key={slug}
+                description={description}
+                title={title}
+                date={date}
+                slug={slug}
+                readingTime={readingTime}
+                image={image}
+              />
             )
           })}
         </PostsWrapper>
@@ -66,6 +79,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            featuredImage {
+              childImageSharp {
+                fluid(quality: 90, maxWidth: 4160) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
         }
       }

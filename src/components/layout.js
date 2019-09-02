@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Nav from './navbar'
+import Footer from './footer'
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -22,6 +23,7 @@ class Layout extends React.Component {
         <main style={{marginTop: '69px'}}>{children}</main>
 
       </div>
+        <Footer />
         </>
     )
   }

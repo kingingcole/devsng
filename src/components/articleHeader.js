@@ -15,6 +15,10 @@ const HeaderWrapper = styled.div`
   padding: 20px 0;
   background: #14957D;
   font-family: 'Fira Sans', sans-serif;
+  
+  @media (max-width: 570px) {
+    display: none
+  }
 `
 
 const LargeText = styled.h1` 

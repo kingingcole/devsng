@@ -19,7 +19,11 @@ const Text = styled.p`
   color: #000;
   font-size: 14px;
   opacity: 0.5;
-  margin-right: 10px
+  margin-right: 10px;
+  mix-blend-mode: normal;
+  @media (max-width: 570px) {
+    font-size: 12px;
+  }
 `
 
 export default PostMetaData

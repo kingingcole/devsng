@@ -2,6 +2,7 @@
 title: My Second Post!
 date: "2019-08-27T00:30:37.121Z"
 published: false
+featuredImage: "./featured-image.jpg"
 ---
 
 Wow! I love blogging so much already.
