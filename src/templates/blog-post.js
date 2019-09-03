@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-
-import moment from 'moment'
+import PostMetaData from '../components/postMetaData'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,39 +13,29 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
+    const {title} = post.frontmatter;
+    const {date} = post.frontmatter;
+    const {description} = post.frontmatter;
+    const readingTime = post.fields.readingTime.text;
+
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
+          title={title}
+          description={description || post.excerpt}
         />
-        <article>
-          <header>
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: rhythm(1),
-              }}
-            >
-              {post.frontmatter.date}
-            </p>
-          </header>
+        <ArticleWrapper>
+          <ArticleHead>
+            <Title>{post.frontmatter.title}</Title>
+            <PostMetaData readingTime={readingTime} date={date}/>
+          </ArticleHead>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
-        </article>
+        </ArticleWrapper>
 
         <nav>
           <ul
@@ -80,6 +70,30 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
+const ArticleWrapper = styled.article`
+  padding: 20px 10px;
+  max-width: 900px;
+  margin: auto
+`
+
+const ArticleHead = styled.section`
+  text-align: center;
+  margin-bottom: 30px;
+`
+
+const Title = styled.h1`
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  max-width: 700px;
+  margin: auto;
+  
+  @media (max-width: 570px) {
+    font-size: 30px;
+  }
+`
+
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -92,6 +106,11 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        readingTime {
+          text
+        }
+      }
       frontmatter {
         title
         date(fromNow: true)

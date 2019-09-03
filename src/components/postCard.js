@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import PostMetaData from "./postMetaData"
 import Img from "gatsby-image"
 
-const PostCard = ({ title, description, url, readingTime, image }) => {
+const PostCard = ({ title, description, url, readingTime, image, date }) => {
   if (description.length > 150) {
     description = description.slice(0, 150) + "..."
   }
@@ -25,7 +25,7 @@ const PostCard = ({ title, description, url, readingTime, image }) => {
           <FeaturedImage sizes={image}/>
         </div>}
       </div>
-      <PostMetaData readingTime={readingTime}/>
+      <PostMetaData readingTime={readingTime} date={date}/>
     </PostCardWrapper>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const PostMetaData = ({readingTime}) => {
+const PostMetaData = ({readingTime, date}) => {
   return (
     <MetaData>
       <Text>{readingTime}</Text>
-      <Text>Aug 20th, 2019</Text>
+      <Text>{date}</Text>
     </MetaData>
   )
 }
