@@ -4,16 +4,16 @@ import { Link } from "gatsby"
 import PostMetaData from "./postMetaData"
 import Img from "gatsby-image"
 
-const PostCard = ({ title, description, slug, readingTime, image }) => {
+const PostCard = ({ title, description, url, readingTime, image }) => {
   if (description.length > 150) {
     description = description.slice(0, 150) + "..."
   }
-  console.log(slug)
+
   return (
     <PostCardWrapper>
       <div className="row">
         <div className="col-8 col-md-9">
-          <PostLink to={slug}>{title}</PostLink>
+          <PostLink to={url}>{title}</PostLink>
           <Description
             dangerouslySetInnerHTML={{
               __html: description,

@@ -30,6 +30,7 @@ class BlogIndex extends React.Component {
             const title = node.frontmatter.title || node.fields.slug
             const description = node.frontmatter.description || node.excerpt
             const {slug} = node.fields
+            let url = `post${slug}`
             const {date} = node.frontmatter
             const readingTime = node.fields.readingTime.text;
             const {featuredImage} = node.frontmatter;
@@ -44,7 +45,7 @@ class BlogIndex extends React.Component {
                 description={description}
                 title={title}
                 date={date}
-                slug={slug}
+                url={url}
                 readingTime={readingTime}
                 image={image}
               />
