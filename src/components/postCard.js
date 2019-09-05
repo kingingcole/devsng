@@ -14,7 +14,7 @@ const PostCard = ({ title, description, url, readingTime, image, date }) => {
       <div className="row">
         <div className="col-8 col-md-9">
           <PostLink to={url}>{title}</PostLink>
-          <Description
+          <Description className="d-none d-sm-block"
             dangerouslySetInnerHTML={{
               __html: description,
             }}
@@ -32,7 +32,9 @@ const PostCard = ({ title, description, url, readingTime, image, date }) => {
 
 const PostCardWrapper = styled.div`
   border-bottom: 1px solid #7e847f26;
-  padding: 10px 0
+  padding: 10px 0;
+  
+  
 `
 
 const FeaturedImage = styled(Img)`
@@ -51,6 +53,7 @@ margin: 5px 0;
 @media (max-width: 570px) {
     font-size: 14px;
   }
+  
 `
 
 const PostLink = styled(Link)`

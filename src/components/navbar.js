@@ -36,6 +36,11 @@ const NavBar = styled.nav`
   width: 100%;
   top: 0;
   z-index: 9999;
+  
+  @media (max-width: 570px) {
+    padding: 10px 0;
+    font-size: auto
+  }
 `
 const NavLinkList = styled.li`
   list-style-type: none;

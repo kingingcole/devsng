@@ -1,11 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components'
+import Img from "gatsby-image"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import PostMetaData from '../components/postMetaData'
+import PostMetaData from "../components/postMetaData"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,10 +14,11 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
-    const {title} = post.frontmatter;
-    const {date} = post.frontmatter;
-    const {description} = post.frontmatter;
-    const readingTime = post.fields.readingTime.text;
+    const { title } = post.frontmatter
+    const { date } = post.frontmatter
+    const { description } = post.frontmatter
+    const readingTime = post.fields.readingTime.text
+    const image = post.frontmatter.featuredImage.childImageSharp.fluid
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -29,40 +31,43 @@ class BlogPostTemplate extends React.Component {
             <Title>{post.frontmatter.title}</Title>
             <PostMetaData readingTime={readingTime} date={date}/>
           </ArticleHead>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <FeaturedImage sizes={image}/>
+          <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
+          {/*<section dangerouslySetInnerHTML={{ __html: post.html }}/>*/}
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
-        </ArticleWrapper>
 
-        <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
+
+          <nav>
+            <ul
+              style={{
+                display: `flex`,
+                flexWrap: `wrap`,
+                justifyContent: `space-between`,
+                listStyle: `none`,
+                padding: 0,
+              }}
+            >
+              <li>
+                {previous && (
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                )}
+              </li>
+              <li>
+                {next && (
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </nav>
+        </ArticleWrapper>
       </Layout>
     )
   }
@@ -72,13 +77,21 @@ export default BlogPostTemplate
 
 const ArticleWrapper = styled.article`
   padding: 20px 10px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto
 `
 
 const ArticleHead = styled.section`
   text-align: center;
   margin-bottom: 30px;
+`
+
+const FeaturedImage = styled(Img)`
+  margin: 20px
+`
+const ArticleText = styled.section`
+  max-width: 700px;
+  margin: 20px auto
 `
 
 const Title = styled.h1`
@@ -115,6 +128,13 @@ export const pageQuery = graphql`
         title
         date(fromNow: true)
         description
+        featuredImage {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 3060) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }

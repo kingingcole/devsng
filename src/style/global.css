@@ -1,4 +1,10 @@
 blockquote {
-    border-left: 2.5px solid #12AD82;
+    border-left: 4px solid #12AD82;
     padding-left: 14px
+}
+
+a{
+    border-bottom: none !important;
+    text-decoration: none !important;
+    box-shadow: none;
 }
