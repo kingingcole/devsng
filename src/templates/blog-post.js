@@ -18,8 +18,15 @@ class BlogPostTemplate extends React.Component {
     const { date } = post.frontmatter
     const { description } = post.frontmatter
     const readingTime = post.fields.readingTime.text
-    const image = post.frontmatter.featuredImage.childImageSharp.fluid
+    const {featuredImage} = post.frontmatter
+    // const image = featuredImage.childImageSharp.fluid
 
+    let image;
+    if (featuredImage){
+      image = post.frontmatter.featuredImage.childImageSharp.fluid
+    }
+
+    console.log(image)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -31,7 +38,7 @@ class BlogPostTemplate extends React.Component {
             <Title>{post.frontmatter.title}</Title>
             <PostMetaData readingTime={readingTime} date={date}/>
           </ArticleHead>
-          <FeaturedImage sizes={image}/>
+          {featuredImage && <FeaturedImage sizes={image}/>}
           <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
           {/*<section dangerouslySetInnerHTML={{ __html: post.html }}/>*/}
           <hr
@@ -91,7 +98,8 @@ const FeaturedImage = styled(Img)`
 `
 const ArticleText = styled.section`
   max-width: 700px;
-  margin: 20px auto
+  margin: 20px auto;
+  font-size: 1em
 `
 
 const Title = styled.h1`

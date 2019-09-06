@@ -3,6 +3,8 @@ title: Hello World
 date: "2019-08-27T22:12:03.284Z"
 description: "Hello World"
 published: true
+author: emeruche-cole
+type: post
 ---
 
 This is my first post on my new fake blog! How exciting!

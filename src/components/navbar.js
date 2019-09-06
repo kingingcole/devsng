@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Logo from './logo'
 import {Helmet} from "react-helmet";
 import { Link } from "gatsby"
+import {COLORS} from '../utils/constants'
 
 
 const Nav = () => {
@@ -28,7 +29,7 @@ const Nav = () => {
 }
 
 const NavBar = styled.nav`
-  background: #14957D;
+  background: ${COLORS.primaryColor};
   padding: 13px 0;
   font-family: 'Fira Sans', sans-serif;
   font-size: 18px;

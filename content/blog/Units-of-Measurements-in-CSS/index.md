@@ -6,6 +6,7 @@ type: post
 description: Units of measurements used when styling HTML elements in CSS
 published: true
 altText: woman holding measuring tape leaning on table
+author: emeruche-cole
 ---
 
 _px and %, em and rem - they are not all the same_

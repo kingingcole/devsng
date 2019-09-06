@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {COLORS} from '../utils/constants'
 
 
 const ArticleHeader = () => {
@@ -13,7 +14,7 @@ const ArticleHeader = () => {
 
 const HeaderWrapper = styled.div`
   padding: 20px 0;
-  background: #14957D;
+  background: ${COLORS.primaryColor};
   font-family: 'Fira Sans', sans-serif;
   
   @media (max-width: 570px) {

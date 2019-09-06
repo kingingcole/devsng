@@ -32,8 +32,10 @@ class BlogIndex extends React.Component {
             const {slug} = node.fields
             let url = `post${slug}`
             const {date} = node.frontmatter
+            const {author} = node.frontmatter
             const readingTime = node.fields.readingTime.text;
             const {featuredImage} = node.frontmatter;
+
             let image;
             if (featuredImage){
               image = node.frontmatter.featuredImage.childImageSharp.fluid
@@ -48,6 +50,7 @@ class BlogIndex extends React.Component {
                 url={url}
                 readingTime={readingTime}
                 image={image}
+                author={author}
               />
             )
           })}
@@ -66,7 +69,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark (sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {published: {ne: false}}})  {
+    allMarkdownRemark(
+      filter: { frontmatter: { type: { eq: "post" }, published: { eq: true } } }
+      sort: { fields: frontmatter___date, order: DESC }
+      ){
       edges {
         node {
           excerpt
@@ -80,6 +86,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            author
             featuredImage {
               childImageSharp {
                 fluid(quality: 90, maxWidth: 4160) {

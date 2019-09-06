@@ -6,6 +6,7 @@ type: post
 description: A look into what I think are my best plugins for a blog site created with GatsbyJS and Markdown
 published: true
 altText: numerous books open on a board
+author: emeruche-cole
 ---
 
 For some time, I did not quite get the idea of static page generators, especially Gatsby JS. It was until I decided to give it a try and I discovered how amazing technology it is! Gatsby JS, amongst all other super things, is used to create a stunning and blazing fast blog, which can use varying data sources like Contentful CMS, WordPress or plain old Markdown. For the latter, it's simply easy to set up and use.<br/>
