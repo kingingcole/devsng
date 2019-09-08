@@ -9,6 +9,9 @@ import { rhythm, scale } from "../utils/typography"
 import PostMetaData from "../components/postMetaData"
 import { COLORS } from "../utils/constants"
 
+const MAX_WIDTH = "800px"
+
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -20,15 +23,14 @@ class BlogPostTemplate extends React.Component {
     const { author } = post.frontmatter
     const { description } = post.frontmatter
     const readingTime = post.fields.readingTime.text
-    const {featuredImage} = post.frontmatter
+    const { featuredImage } = post.frontmatter
     // const image = featuredImage.childImageSharp.fluid
 
-    let image;
-    if (featuredImage){
+    let image
+    if (featuredImage) {
       image = post.frontmatter.featuredImage.childImageSharp.fluid
     }
 
-    console.log(author)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -38,10 +40,9 @@ class BlogPostTemplate extends React.Component {
         <ArticleWrapper>
           <ArticleHead>
             <Title>{post.frontmatter.title}</Title>
-
           </ArticleHead>
           {featuredImage && <FeaturedImage sizes={image}/>}
-          <div className="text-left" style={{maxWidth: '700px', margin: 'auto'}}>
+          <div className="text-left" style={{ maxWidth: MAX_WIDTH, margin: "auto" }}>
             <PostMetaData readingTime={readingTime} date={date} author={author} center={true}/>
           </div>
           <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
@@ -50,34 +51,6 @@ class BlogPostTemplate extends React.Component {
               marginBottom: rhythm(1),
             }}
           />
-
-
-          <nav>
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
-              <li>
-                {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </ul>
-          </nav>
         </ArticleWrapper>
       </Layout>
     )
@@ -101,7 +74,7 @@ const FeaturedImage = styled(Img)`
   margin: 20px
 `
 const ArticleText = styled.section`
-  max-width: 700px;
+  max-width: ${MAX_WIDTH};
   margin: 20px auto;
   font-size: 1em
 `
@@ -119,13 +92,6 @@ const Title = styled.h1`
   }
 `
 
-const AuthorAvatar = styled(Img)`
-  border-radius: 50%;
-  padding: 10px;
-  border: 1px solid ${COLORS.primaryColor};
-  padding: 0px;
-  margin: 0px !important
-`
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

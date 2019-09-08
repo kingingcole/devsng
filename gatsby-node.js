@@ -5,10 +5,12 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const profilePage = path.resolve(`./src/templates/profile.js`)
+
   return graphql(
     `
       {
-         allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {published: {eq: true} }}, limit: 1000) {
+         allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 1000) {
       edges {
         node {
           fields {
@@ -30,7 +32,8 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges.filter(post => post.node.frontmatter.type === "post" && post.node.frontmatter.published === true)
+    const profiles = result.data.allMarkdownRemark.edges.filter(profile => profile.node.frontmatter.type === "profile")
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -48,9 +51,25 @@ exports.createPages = ({ graphql, actions }) => {
           next,
         },
       })
-    })
+    });
 
-    return null
+    profiles.forEach((profile, index) => {
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node
+      const next = index === 0 ? null : posts[index - 1].node
+      let { slug } = profile.node.fields
+
+      let path = `profile${slug}`
+
+      createPage({
+        path,
+        component: profilePage,
+        context: {
+          slug: profile.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
   })
 }
 
