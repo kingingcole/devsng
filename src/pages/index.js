@@ -83,7 +83,7 @@ export const pageQuery = graphql`
             }
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(fromNow: true)
             title
             description
             author

@@ -10,3 +10,7 @@ a{
 }
 
 body{ background: whitesmoke}
+
+img{
+    margin: 0 !important
+}

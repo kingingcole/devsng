@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import PostMetaData from "./postMetaData"
 import Img from "gatsby-image"
-import {COLORS} from '../utils/constants'
+import { COLORS } from "../utils/constants"
 
 
-const PostCard = ({ title, description, url, readingTime, image, date }) => {
+const PostCard = ({ title, description, url, readingTime, image, date, author }) => {
   if (description.length > 150) {
     description = description.slice(0, 150) + "..."
   }
@@ -17,17 +17,18 @@ const PostCard = ({ title, description, url, readingTime, image, date }) => {
         <div className="col-8 col-md-9">
           <PostLink to={url}>{title}</PostLink>
           <Description className="d-none d-sm-block"
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}
+                       dangerouslySetInnerHTML={{
+                         __html: description,
+                       }}
           />
+          <PostMetaData readingTime={readingTime} date={date} author={author}/>
+
         </div>
         {image &&
         <div className="col-4 col-md-3 text-right">
           <FeaturedImage sizes={image}/>
         </div>}
       </div>
-      <PostMetaData readingTime={readingTime} date={date}/>
     </PostCardWrapper>
   )
 }
@@ -69,11 +70,12 @@ const PostLink = styled(Link)`
   margin-bottom: 10px;
   &:hover,
   &:active{
-    color: ${COLORS.secondary};
+    color: ${COLORS.secondaryColor};
     border: none;
     text-decoration: none
   }
 `
+
 
 export default PostCard
 

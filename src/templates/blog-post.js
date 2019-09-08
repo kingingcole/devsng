@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import PostMetaData from "../components/postMetaData"
+import { COLORS } from "../utils/constants"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class BlogPostTemplate extends React.Component {
 
     const { title } = post.frontmatter
     const { date } = post.frontmatter
+    const { author } = post.frontmatter
     const { description } = post.frontmatter
     const readingTime = post.fields.readingTime.text
     const {featuredImage} = post.frontmatter
@@ -26,7 +28,7 @@ class BlogPostTemplate extends React.Component {
       image = post.frontmatter.featuredImage.childImageSharp.fluid
     }
 
-    console.log(image)
+    console.log(author)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -36,11 +38,13 @@ class BlogPostTemplate extends React.Component {
         <ArticleWrapper>
           <ArticleHead>
             <Title>{post.frontmatter.title}</Title>
-            <PostMetaData readingTime={readingTime} date={date}/>
+
           </ArticleHead>
           {featuredImage && <FeaturedImage sizes={image}/>}
+          <div className="text-left" style={{maxWidth: '700px', margin: 'auto'}}>
+            <PostMetaData readingTime={readingTime} date={date} author={author} center={true}/>
+          </div>
           <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
-          {/*<section dangerouslySetInnerHTML={{ __html: post.html }}/>*/}
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -115,6 +119,14 @@ const Title = styled.h1`
   }
 `
 
+const AuthorAvatar = styled(Img)`
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid ${COLORS.primaryColor};
+  padding: 0px;
+  margin: 0px !important
+`
+
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -136,6 +148,7 @@ export const pageQuery = graphql`
         title
         date(fromNow: true)
         description
+        author
         featuredImage {
           childImageSharp {
             fluid(quality: 90, maxWidth: 3060) {
