@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import PostMetaData from "../components/postMetaData"
-import { COLORS } from "../utils/constants"
+import { PAGE_MAX_WIDTH } from "../utils/constants"
 
 const MAX_WIDTH = "800px"
 
@@ -46,11 +46,6 @@ class BlogPostTemplate extends React.Component {
             <PostMetaData readingTime={readingTime} date={date} author={author} center={true}/>
           </div>
           <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
         </ArticleWrapper>
       </Layout>
     )
@@ -61,8 +56,8 @@ export default BlogPostTemplate
 
 const ArticleWrapper = styled.article`
   padding: 20px 10px;
-  max-width: 1100px;
-  margin: auto
+  margin: auto;
+  max-width: ${PAGE_MAX_WIDTH}
 `
 
 const ArticleHead = styled.section`

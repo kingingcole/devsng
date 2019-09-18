@@ -12,12 +12,14 @@ import { COLORS } from "../utils/constants"
 
 class ProfileTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const author = this.props.data.markdownRemark
+    const posts = this.props.data.allMarkdownRemark.edges
+
     const siteTitle = this.props.data.site.siteMetadata.title
     const { slug } = this.props.pageContext
 
-    const { name } = post.frontmatter
-    console.log(name, slug)
+    const { name } = author.frontmatter
+    console.log(this.props.data)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -25,6 +27,11 @@ class ProfileTemplate extends React.Component {
           title={name}
           description={`Profile of ${name} | DevsNg`}
         />
+        {posts.map(({node}) => {
+          return(
+            <p key={node.id}>{node.frontmatter.title}</p>
+          )
+        })}
       </Layout>
     )
   }
@@ -35,7 +42,7 @@ export default ProfileTemplate
 
 
 export const userQuery = graphql`
-  query USerProfileBySlug($slug: String!) {
+  query UserProfileBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -55,5 +62,25 @@ export const userQuery = graphql`
         name
       }
     }
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}, author: {eq: "emeruche-cole"}}}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            description
+            author
+            date
+          }
+          fields {
+            slug
+            readingTime {
+              text
+            }
+          }
+        }
+      }
+    }
   }
+    
 `

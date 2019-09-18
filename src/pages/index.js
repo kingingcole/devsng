@@ -7,10 +7,10 @@ import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { PAGE_MAX_WIDTH } from "../utils/constants"
 
 const PostsWrapper = styled.div`
-  max-width: 1100px;
+  max-width: ${PAGE_MAX_WIDTH};
   margin: auto;
   padding: 30px 10px
 `
