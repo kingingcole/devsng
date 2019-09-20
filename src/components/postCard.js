@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 import { COLORS } from "../utils/constants"
 
 
-const PostCard = ({ title, description, url, readingTime, image, date, author }) => {
+const PostCard = ({ title, description, url, readingTime, image, date, author, hideAuthorDetails}) => {
   if (description.length > 150) {
     description = description.slice(0, 150) + "..."
   }
@@ -21,7 +21,7 @@ const PostCard = ({ title, description, url, readingTime, image, date, author })
                          __html: description,
                        }}
           />
-          <PostMetaData readingTime={readingTime} date={date} author={author}/>
+          <PostMetaData readingTime={readingTime} date={date} author={author} hideAuthorDetails={hideAuthorDetails}/>
 
         </div>
         {image &&

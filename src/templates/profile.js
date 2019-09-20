@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PostCard from '../components/postCard'
 import { rhythm, scale } from "../utils/typography"
 import PostMetaData from "../components/postMetaData"
 import { COLORS } from "../utils/constants"
@@ -19,7 +20,6 @@ class ProfileTemplate extends React.Component {
     const { slug } = this.props.pageContext
 
     const { name } = author.frontmatter
-    console.log(this.props.data)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -28,8 +28,33 @@ class ProfileTemplate extends React.Component {
           description={`Profile of ${name} | DevsNg`}
         />
         {posts.map(({node}) => {
+          const title = node.frontmatter.title || node.fields.slug
+          const description = node.frontmatter.description || node.excerpt
+          const {slug} = node.fields
+          let url = `post${slug}`
+          const {date} = node.frontmatter
+          const {author} = node.frontmatter
+          const readingTime = node.fields.readingTime.text;
+          const {featuredImage} = node.frontmatter;
+
+          let image;
+          if (featuredImage){
+            image = node.frontmatter.featuredImage.childImageSharp.fluid
+          }
+          console.log(description)
+
           return(
-            <p key={node.id}>{node.frontmatter.title}</p>
+            <PostCard
+              key={slug}
+              description={description}
+              title={title}
+              date={date}
+              url={url}
+              readingTime={readingTime}
+              image={image}
+              author={author}
+              hideAuthorDetails={true}
+            />
           )
         })}
       </Layout>
@@ -57,6 +82,7 @@ export const userQuery = graphql`
         readingTime {
           text
         }
+        slug
       }
       frontmatter {
         name
@@ -66,11 +92,19 @@ export const userQuery = graphql`
       edges {
         node {
           id
+          excerpt
           frontmatter {
             title
             description
             author
-            date
+            date(fromNow: true)
+            featuredImage {
+              childImageSharp {
+                fluid(quality: 90, maxWidth: 4160) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           fields {
             slug
