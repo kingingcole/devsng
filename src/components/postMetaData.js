@@ -43,7 +43,7 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author , hi
     <MetaData>
       {hideAuthorDetails !== true && <AuthorDetails className={`row`}>
         <AuthorAvatar fixed={avatar}/>
-        <AuthorLink to={authorProfileLink}>{name}</AuthorLink>
+        <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
       </AuthorDetails>}
       <PostDetails>
         <Text>{readingTime}</Text>
@@ -54,15 +54,15 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author , hi
 }
 
 const MetaData = styled.div`
-  margin-top: 10px;
+  margin-top: 0px;
 `
 
 const AuthorDetails = styled.div`
-  margin: 5px auto
+  margin: auto
 `
 
 const PostDetails = styled.div`
-    margin: 5px auto
+    margin: auto;
 `
 
 const AuthorAvatar = styled(Img)`
@@ -78,7 +78,8 @@ const Text = styled.p`
   color: #000;
   font-size: 14px;
   opacity: 0.5;
-  margin: 0px 5px;
+  margin: 0px;
+  margin-right: 8px;
   mix-blend-mode: normal;
   @media (max-width: 570px) {
     font-size: 12px;

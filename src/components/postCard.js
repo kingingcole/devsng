@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import PostMetaData from "./postMetaData"
 import Img from "gatsby-image"
 import { COLORS } from "../utils/constants"
@@ -47,7 +47,7 @@ const FeaturedImage = styled(Img)`
 
 const Description = styled.p`
 font-size: 16px;
-line-height: 1.5em;
+line-height: 1.2em;
 color: #4D4141;
 margin: 5px 0;
 
@@ -62,7 +62,7 @@ const PostLink = styled(Link)`
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 20px;
   color: ${COLORS.primaryColor};
   text-decoration: none;
   box-shadow: none;
