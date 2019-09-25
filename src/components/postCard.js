@@ -14,7 +14,7 @@ const PostCard = ({ title, description, url, readingTime, image, date, author, h
   return (
     <PostCardWrapper>
       <div className="row">
-        <div className="col-8 col-md-9">
+        <div className="col-9 col-md-9">
           <PostLink to={url}>{title}</PostLink>
           <Description className="d-none d-sm-block"
                        dangerouslySetInnerHTML={{
@@ -25,7 +25,7 @@ const PostCard = ({ title, description, url, readingTime, image, date, author, h
 
         </div>
         {image &&
-        <div className="col-4 col-md-3 text-right">
+        <div className="col-3 col-md-3 text-right">
           <FeaturedImage sizes={image}/>
         </div>}
       </div>
@@ -46,13 +46,13 @@ const FeaturedImage = styled(Img)`
 `
 
 const Description = styled.p`
-font-size: 16px;
+font-size: 14px;
 line-height: 1.2em;
 color: #4D4141;
 margin: 5px 0;
 
 @media (max-width: 570px) {
-    font-size: 14px;
+    font-size: 12px;
   }
   
 `
@@ -61,7 +61,7 @@ const PostLink = styled(Link)`
   font-family: Fira Sans;
   font-style: normal;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 20px;
   color: ${COLORS.primaryColor};
   text-decoration: none;
