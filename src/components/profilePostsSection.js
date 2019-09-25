@@ -8,12 +8,9 @@ import Layout from "./layout"
 
 const ProfilePostsSection = ({ posts, siteTitle, name }) => {
   return (
-    <Layout location={this.props.location} title={siteTitle}>
-      <SEO
-        title={name}
-        description={`Profile of ${name} | DevsNg`}
-      />
+    <>
       <PostsWrapper className={`container`}>
+        <Text>Posts</Text>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const description = node.frontmatter.description || node.excerpt
@@ -44,14 +41,20 @@ const ProfilePostsSection = ({ posts, siteTitle, name }) => {
           )
         })}
       </PostsWrapper>
-    </Layout>
+    </>
   )
 }
 
 export default ProfilePostsSection
 
 const PostsWrapper = styled.div`
-      max-width: ${PAGE_MAX_WIDTH};
-      margin: auto;
-      padding: 30px 10px
-    `
+  max-width: ${PAGE_MAX_WIDTH};
+  margin: auto;
+  padding: 30px 10px
+`
+
+const Text = styled.h3`
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: bold
+`
