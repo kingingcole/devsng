@@ -2,9 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ProfilePostsSection from '../components/profilePostsSection'
 import PostCard from "../components/postCard"
 import { rhythm, scale } from "../utils/typography"
 import PostMetaData from "../components/postMetaData"
@@ -20,52 +20,9 @@ class ProfileTemplate extends React.Component {
     const { slug } = this.props.pageContext
 
     const { name } = author.frontmatter
-
-    const PostsWrapper = styled.div`
-      max-width: ${PAGE_MAX_WIDTH};
-      margin: auto;
-      padding: 30px 10px
-    `
-
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={name}
-          description={`Profile of ${name} | DevsNg`}
-        />
-        <PostsWrapper className={`container`}>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            const description = node.frontmatter.description || node.excerpt
-            const { slug } = node.fields
-            let url = `post${slug}`
-            const { date } = node.frontmatter
-            const { author } = node.frontmatter
-            const readingTime = node.fields.readingTime.text
-            const { featuredImage } = node.frontmatter
-
-            let image
-            if (featuredImage) {
-              image = node.frontmatter.featuredImage.childImageSharp.fluid
-            }
-
-            return (
-              <PostCard
-                hideAuthorDetails={true}
-                key={slug}
-                description={description}
-                title={title}
-                date={date}
-                url={url}
-                readingTime={readingTime}
-                image={image}
-                author={author}
-              />
-            )
-          })}
-        </PostsWrapper>
-      </Layout>
-    )
+      <ProfilePostsSection posts={posts} siteTitle={siteTitle}/>
+      )
   }
 }
 
