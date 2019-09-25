@@ -6,7 +6,7 @@ import PostCard from "./postCard"
 import Layout from "./layout"
 
 
-const ProfilePostsSection = ({ posts, siteTitle }) => {
+const ProfilePostsSection = ({ posts, siteTitle, name }) => {
   return (
     <Layout location={this.props.location} title={siteTitle}>
       <SEO

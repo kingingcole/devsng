@@ -21,7 +21,7 @@ class ProfileTemplate extends React.Component {
 
     const { name } = author.frontmatter
     return (
-      <ProfilePostsSection posts={posts} siteTitle={siteTitle}/>
+      <ProfilePostsSection posts={posts} siteTitle={siteTitle} name={name}/>
       )
   }
 }
