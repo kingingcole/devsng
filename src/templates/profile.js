@@ -57,7 +57,7 @@ export const userQuery = graphql`
         name
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}, author: {eq: "emeruche-cole"}}}) {
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}, author: {eq: "emeruche-cole"}}}, , sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           id

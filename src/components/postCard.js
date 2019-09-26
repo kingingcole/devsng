@@ -74,6 +74,9 @@ const PostLink = styled(Link)`
     border: none;
     text-decoration: none
   }
+  @media (max-width: 570px) {
+    font-size: 18px;
+  }
 `
 
 
