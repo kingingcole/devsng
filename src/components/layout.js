@@ -20,7 +20,7 @@ class Layout extends React.Component {
           // padding: `0 ${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <main style={{marginTop: '69px'}}>{children}</main>
+        <main style={{marginTop: '65px'}}>{children}</main>
 
       </div>
         <Footer />

@@ -5,6 +5,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProfilePostsSection from '../components/profilePostsSection'
+import ProfileHeader from '../components/profileHeader'
 import PostCard from "../components/postCard"
 import { rhythm, scale } from "../utils/typography"
 import PostMetaData from "../components/postMetaData"
@@ -26,6 +27,7 @@ class ProfileTemplate extends React.Component {
           title={name}
           description={`Profile of ${name} | DevsNg`}
         />
+        <ProfileHeader />
         <ProfilePostsSection posts={posts} siteTitle={siteTitle} name={name}/>
       </Layout>
       )

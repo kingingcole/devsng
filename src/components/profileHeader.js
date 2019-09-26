@@ -11,7 +11,7 @@ const ProfileHeader = ({name}) => {
 }
 
 const HeaderWrapper = styled.div`
-  padding: 20px 0;
+  padding: 30px 0;
   background: ${COLORS.primaryColor};
   font-family: 'Fira Sans', sans-serif;
 `
