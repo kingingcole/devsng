@@ -16,7 +16,7 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author , hi
             frontmatter {
               avatar {
                 childImageSharp {
-                  fixed(quality: 90, width: 30, height: 30) {
+                  fixed(quality: 90, width: 25, height: 25) {
                     ...GatsbyImageSharpFixed_withWebp
                   }
                 }
