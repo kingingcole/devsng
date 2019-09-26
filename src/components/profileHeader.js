@@ -8,9 +8,9 @@ import { PAGE_MAX_WIDTH } from "../utils/constants"
 const ProfileHeader = ({name, avatar}) => {
   return (
     <HeaderWrapper>
-      <div className="container">
+      <Container>
         <Avatar sizes={avatar.childImageSharp.fluid}/>
-      </div>
+      </Container>
     </HeaderWrapper>
   )
 }
@@ -19,6 +19,7 @@ const HeaderWrapper = styled.div`
   height: 150px;
   background: ${COLORS.primaryColor};
   font-family: 'Fira Sans', sans-serif;
+  padding: 0 10px
 `
 
 const ProfileName = styled.p`
@@ -31,7 +32,19 @@ const Avatar = styled(Img)`
   max-width: 190px;
   position: relative;
   top: 40px;
-  border: 3.3px solid ${COLORS.primaryColor}
+  border: 3.6px solid ${COLORS.primaryColor};
+  
+  @media (max-width: 570px) {
+    max-height: 150px;
+    max-width: 150px;
+    top: 80px
+  }
+  
+`
+
+const Container = styled.div`
+  max-width: ${PAGE_MAX_WIDTH};
+  margin: auto
 `
 
 export default ProfileHeader
