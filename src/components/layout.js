@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Nav from './navbar'
 import Footer from './footer'
+import styled from 'styled-components'
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -20,7 +21,7 @@ class Layout extends React.Component {
           // padding: `0 ${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <main style={{marginTop: '65px'}}>{children}</main>
+        <Main>{children}</Main>
 
       </div>
         <Footer />
@@ -28,5 +29,13 @@ class Layout extends React.Component {
     )
   }
 }
+
+const Main = styled.main`
+  margin-top: 69px;
+  
+   @media (max-width: 570px) {
+    margin-top: 59px
+  }
+`
 
 export default Layout

@@ -1,15 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import styled from "styled-components"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProfilePostsSection from '../components/profilePostsSection'
 import ProfileHeader from '../components/profileHeader'
-import PostCard from "../components/postCard"
-import { rhythm, scale } from "../utils/typography"
-import PostMetaData from "../components/postMetaData"
-import { COLORS, PAGE_MAX_WIDTH } from "../utils/constants"
 
 
 class ProfileTemplate extends React.Component {

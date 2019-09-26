@@ -39,8 +39,8 @@ const NavBar = styled.nav`
   z-index: 9999;
   
   @media (max-width: 570px) {
-    padding: 10px 0;
-    font-size: auto
+    padding: 8px 0;
+    font-size: 1em !important
   }
 `
 const NavLinkList = styled.li`
@@ -52,6 +52,7 @@ const NavLink = styled(Link)`
   text-decoration: none !important;
   color: #F9FAFB !important;
   box-shadow: none
+
 `
 
 
