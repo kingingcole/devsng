@@ -50,7 +50,8 @@ export default ProfilePostsSection
 const PostsWrapper = styled.div`
   max-width: ${PAGE_MAX_WIDTH};
   margin: auto;
-  padding: 30px 10px
+  padding: 30px 10px;
+  margin-top: 80px
 `
 
 const Text = styled.h3`
