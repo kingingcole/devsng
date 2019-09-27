@@ -28,7 +28,6 @@ const Nav = () => {
 const NavBar = styled.nav`
   background: ${COLORS.primaryColor};
   padding: 13px 0;
-  font-family: 'Fira Sans', sans-serif;
   font-size: 18px;
   position: fixed;
   width: 100%;
