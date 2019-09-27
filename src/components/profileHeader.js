@@ -20,7 +20,6 @@ const ProfileHeader = ({ name, avatar, links }) => {
 const HeaderWrapper = styled.div`
   height: 150px;
   background: ${COLORS.primaryColor};
-  font-family: 'Fira Sans', sans-serif;
   padding: 0 10px;
   margin-bottom: 80px;
   

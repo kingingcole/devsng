@@ -75,7 +75,6 @@ const ArticleText = styled.section`
 `
 
 const Title = styled.h1`
-  font-family: Fira Sans;
   font-style: normal;
   font-weight: 900;
   font-size: 48px;

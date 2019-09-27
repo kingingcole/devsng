@@ -14,3 +14,7 @@ body{ background: whitesmoke}
 img{
     margin: 0 !important
 }
+
+html{
+    font-family: 'Lato', sans-serif;
+}

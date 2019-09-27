@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Nav from "./navbar"
 import Footer from "./footer"
 import styled from "styled-components"
-
+import Helmet from "react-helmet"
 import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
@@ -12,6 +12,9 @@ class Layout extends React.Component {
 
     return (
       <>
+        <Helmet>
+          <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet" />
+        </Helmet>
         <header><Nav/></header>
         <div
           style={{
