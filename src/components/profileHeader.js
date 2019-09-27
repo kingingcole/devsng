@@ -10,6 +10,7 @@ const ProfileHeader = ({ name, avatar }) => {
     <HeaderWrapper>
       <Container>
         <Avatar sizes={avatar.childImageSharp.fluid}/>
+        <ProfileName>{name}</ProfileName>
       </Container>
     </HeaderWrapper>
   )
@@ -20,14 +21,27 @@ const HeaderWrapper = styled.div`
   background: ${COLORS.primaryColor};
   font-family: 'Fira Sans', sans-serif;
   padding: 0 10px;
+  margin-bottom: 80px;
   
   @media (max-width: 570px) {
-    height: 100px
+    height: 100px;
+    margin-bottom: 70px
   }
 `
 
 const ProfileName = styled.p`
-  font-weight: bold
+  font-weight: bold;
+  color: white;
+  position: relative;
+  left: 220px;
+  bottom: 85px;
+  font-size: 1.3em;
+  
+  @media (max-width: 570px) {
+    left: 140px;
+    font-size: 14.3px;
+    bottom: 65px;
+  }
 `
 
 const Avatar = styled(Img)`
@@ -39,8 +53,8 @@ const Avatar = styled(Img)`
   border: 3.6px solid ${COLORS.primaryColor};
   
   @media (max-width: 570px) {
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 130px;
+    max-width: 130px;
     top: 30px
   }
   
