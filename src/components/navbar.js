@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from './logo'
-import {Helmet} from "react-helmet";
 import { Link } from "gatsby"
 import {COLORS} from '../utils/constants'
 

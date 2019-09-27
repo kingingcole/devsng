@@ -1,8 +1,7 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import ArticleHeader from '../components/articleHeader'
 import PostCard from '../components/postCard'
-import Img from "gatsby-image"
 import styled from 'styled-components'
 
 import Layout from "../components/layout"

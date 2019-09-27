@@ -13,7 +13,7 @@ class ProfileTemplate extends React.Component {
     const posts = this.props.data.allMarkdownRemark.edges
 
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { slug, authorIdentifier } = this.props.pageContext
+    // const { slug, authorIdentifier } = this.props.pageContext
 
     const { name } = author.frontmatter
     const {avatar} = author.frontmatter
@@ -30,7 +30,6 @@ class ProfileTemplate extends React.Component {
       email,
       website
     }
-    console.log(slug, author)
 
     return (
       <Layout>

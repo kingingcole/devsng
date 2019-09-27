@@ -1,11 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 import PostMetaData from "../components/postMetaData"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 

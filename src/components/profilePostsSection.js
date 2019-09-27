@@ -1,9 +1,7 @@
 import React from "react"
-import SEO from "../templates/profile"
 import styled from "styled-components"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 import PostCard from "./postCard"
-import Layout from "./layout"
 
 
 const ProfilePostsSection = ({ posts }) => {

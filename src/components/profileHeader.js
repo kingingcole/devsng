@@ -4,7 +4,6 @@ import { COLORS } from "../utils/constants"
 import Img from "gatsby-image"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 import FeatherIcon from "feather-icons-react"
-// import ProfileLinks from './profileLinks'
 
 
 const ProfileHeader = ({ name, avatar, links }) => {
