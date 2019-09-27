@@ -10,7 +10,7 @@ const ProfilePostsSection = ({ posts }) => {
   return (
     <>
       <PostsWrapper className={`container`}>
-        <Text>Posts</Text>
+        <Text>Posts  <PostCount>{posts.length}</PostCount></Text>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const description = node.frontmatter.description || node.excerpt
@@ -54,7 +54,15 @@ const PostsWrapper = styled.div`
 `
 
 const Text = styled.h3`
-  margin-bottom: 24px;
-  font-size: 22px;
+  margin-bottom: 12px;
+  font-size: 20px;
   font-weight: bold
+`
+
+const PostCount = styled.span`
+  font-size: 40px;
+  font-family: 'Vibes', cursive;
+  margin-left: 6px;
+  font-style: italic;
+  color: #777474
 `

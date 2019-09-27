@@ -13,7 +13,7 @@ class Layout extends React.Component {
     return (
       <>
         <Helmet>
-          <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Vibes&display=swap" rel="stylesheet" />
         </Helmet>
         <header><Nav/></header>
         <div
