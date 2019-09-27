@@ -9,9 +9,6 @@ import {COLORS} from '../utils/constants'
 const Nav = () => {
   return (
     <NavBar>
-      <Helmet>
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet" />
-      </Helmet>
       <div className="container" style={{maxWidth: '1100px'}}>
         <div className="row">
           <div className="col-2"><Logo/></div>
