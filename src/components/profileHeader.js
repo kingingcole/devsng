@@ -5,7 +5,8 @@ import Img from "gatsby-image"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 
 
-const ProfileHeader = ({ name, avatar }) => {
+const ProfileHeader = ({ name, avatar, links }) => {
+  console.log(links)
   return (
     <HeaderWrapper>
       <Container>

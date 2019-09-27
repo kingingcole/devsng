@@ -17,6 +17,19 @@ class ProfileTemplate extends React.Component {
     const { name } = author.frontmatter
     const {avatar} = author.frontmatter
 
+    // social links
+    const {twitter} = author.frontmatter
+    const {github} = author.frontmatter
+    const {email} = author.frontmatter
+    const {website} = author.frontmatter
+
+    const links = {
+      twitter,
+      github,
+      email,
+      website
+    }
+
 
     return (
       <Layout>
@@ -24,7 +37,7 @@ class ProfileTemplate extends React.Component {
           title={name}
           description={`Profile of ${name} | DevsNg`}
         />
-        <ProfileHeader avatar={avatar} name={name}/>
+        <ProfileHeader avatar={avatar} name={name} links={links}/>
         <ProfilePostsSection posts={posts} siteTitle={siteTitle}/>
       </Layout>
       )
@@ -54,6 +67,10 @@ export const userQuery = graphql`
       }
       frontmatter {
         name
+        twitter
+        github
+        email
+        website
         avatar{
           childImageSharp {
             fluid(quality: 90, maxWidth: 3000){
