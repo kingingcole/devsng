@@ -1,9 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
+import FeatherIcon from "feather-icons-react"
 
-const ProfileLink = () => {
+
+const ProfileLinks = () => {
   return(
-    null
+    <ProfileLinksWrapper>
+      <FeatherIcon icon="mail" size="17" />
+      <FeatherIcon icon="mail" size="17" />
+    </ProfileLinksWrapper>
   )
 }
 
-export default ProfileLink
+const ProfileLinksWrapper = styled.div``
+
+export default ProfileLinks

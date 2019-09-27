@@ -1,5 +1,5 @@
 blockquote {
-    border-left: 4px solid #12AD82;
+    border-left: 4px solid #14957D;
     padding-left: 14px
 }
 
@@ -7,6 +7,12 @@ a{
     border-bottom: none !important;
     text-decoration: none !important;
     box-shadow: none;
+    color: #14957D;
+}
+
+a:hover, a:focus{
+    color: #90c695;
+    /*text-decoration: underline !important;*/
 }
 
 body{ background: whitesmoke}
@@ -15,6 +21,12 @@ img{
     margin: 0 !important
 }
 
-html{
-    font-family: 'Lato', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    font-family: 'Lato', sans-serif !important;
 }

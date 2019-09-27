@@ -3,15 +3,24 @@ import styled from "styled-components"
 import { COLORS } from "../utils/constants"
 import Img from "gatsby-image"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
+import FeatherIcon from "feather-icons-react"
+// import ProfileLinks from './profileLinks'
 
 
 const ProfileHeader = ({ name, avatar, links }) => {
   console.log(links)
+  const { twitter, github, email, website } = links;
   return (
     <HeaderWrapper>
       <Container>
         <Avatar sizes={avatar.childImageSharp.fluid}/>
         <ProfileName>{name}</ProfileName>
+        <ProfileLinks>
+          {twitter && <Link href={twitter}><FeatherIcon icon="twitter" size="17"/></Link>}
+          {github && <Link href={github}><FeatherIcon icon="github" size="17"/></Link>}
+          {email && <Link href={email}><FeatherIcon icon="mail" size="17"/></Link>}
+          {website && <Link href={website}><FeatherIcon icon="globe" size="17"/></Link>}
+        </ProfileLinks>
       </Container>
     </HeaderWrapper>
   )
@@ -42,6 +51,24 @@ const ProfileName = styled.p`
     font-size: 14.3px;
     bottom: 65px;
   }
+`
+
+const ProfileLinks = styled.div`
+  position: relative;
+  left: 220px;
+  bottom: 75px;
+  font-size: 1.3em;
+  margin-top: 10px;
+  
+  @media (max-width: 570px) {
+    left: 140px;
+    font-size: 14.3px;
+    bottom: 65px;
+  }
+`
+
+const Link = styled.a`
+  padding-right: 10px;
 `
 
 const Avatar = styled(Img)`

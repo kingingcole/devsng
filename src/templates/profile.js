@@ -6,6 +6,7 @@ import ProfilePostsSection from '../components/profilePostsSection'
 import ProfileHeader from '../components/profileHeader'
 
 
+
 class ProfileTemplate extends React.Component {
   render() {
     const author = this.props.data.markdownRemark

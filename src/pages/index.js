@@ -26,7 +26,7 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <ArticleHeader/>
         <PostsWrapper className={`container`}>
-          {posts.map(({ node }) => {
+          {posts.map(({ node }, i) => {
             const title = node.frontmatter.title || node.fields.slug
             const description = node.frontmatter.description || node.excerpt
             const {slug} = node.fields
@@ -36,6 +36,7 @@ class BlogIndex extends React.Component {
             const readingTime = node.fields.readingTime.text;
             const {featuredImage} = node.frontmatter;
 
+
             let image;
             if (featuredImage){
               image = node.frontmatter.featuredImage.childImageSharp.fluid
@@ -43,7 +44,7 @@ class BlogIndex extends React.Component {
 
             return (
               <PostCard
-                key={slug}
+                key={i}
                 description={description}
                 title={title}
                 date={date}
