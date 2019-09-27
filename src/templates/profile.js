@@ -15,14 +15,30 @@ class ProfileTemplate extends React.Component {
     const { slug } = this.props.pageContext
 
     const { name } = author.frontmatter
+    const {avatar} = author.frontmatter
+
+    // social links
+    const {twitter} = author.frontmatter
+    const {github} = author.frontmatter
+    const {email} = author.frontmatter
+    const {website} = author.frontmatter
+
+    const links = {
+      twitter,
+      github,
+      email,
+      website
+    }
+
+
     return (
-      <Layout location={name} title={siteTitle}>
+      <Layout>
         <SEO
           title={name}
           description={`Profile of ${name} | DevsNg`}
         />
-        <ProfileHeader />
-        <ProfilePostsSection posts={posts} siteTitle={siteTitle} name={name}/>
+        <ProfileHeader avatar={avatar} name={name} links={links}/>
+        <ProfilePostsSection posts={posts} siteTitle={siteTitle}/>
       </Layout>
       )
   }
@@ -51,6 +67,17 @@ export const userQuery = graphql`
       }
       frontmatter {
         name
+        twitter
+        github
+        email
+        website
+        avatar{
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 3000){
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
     allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}, author: {eq: "emeruche-cole"}}}, , sort: {order: DESC, fields: frontmatter___date}) {

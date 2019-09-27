@@ -6,7 +6,7 @@ import PostCard from "./postCard"
 import Layout from "./layout"
 
 
-const ProfilePostsSection = ({ posts, siteTitle, name }) => {
+const ProfilePostsSection = ({ posts }) => {
   return (
     <>
       <PostsWrapper className={`container`}>
@@ -15,7 +15,7 @@ const ProfilePostsSection = ({ posts, siteTitle, name }) => {
           const title = node.frontmatter.title || node.fields.slug
           const description = node.frontmatter.description || node.excerpt
           const { slug } = node.fields
-          let url = `post${slug}`
+          const url = `post${slug}`
           const { date } = node.frontmatter
           const { author } = node.frontmatter
           const readingTime = node.fields.readingTime.text
@@ -50,7 +50,7 @@ export default ProfilePostsSection
 const PostsWrapper = styled.div`
   max-width: ${PAGE_MAX_WIDTH};
   margin: auto;
-  padding: 30px 10px
+  padding: 30px 10px;
 `
 
 const Text = styled.h3`
