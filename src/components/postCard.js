@@ -58,7 +58,6 @@ margin: 5px 0;
 `
 
 const PostLink = styled(Link)`
-  font-family: Fira Sans;
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
