@@ -10,7 +10,7 @@ const ProfilePostsSection = ({ posts }) => {
   return (
     <>
       <PostsWrapper className={`container`}>
-        <Text>Posts  <PostCount>{posts.length}</PostCount></Text>
+        <Text>{posts.length > 1 ? 'Posts' : 'Post'}  <PostCount>{posts.length}</PostCount></Text>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const description = node.frontmatter.description || node.excerpt

@@ -8,7 +8,6 @@ import FeatherIcon from "feather-icons-react"
 
 
 const ProfileHeader = ({ name, avatar, links }) => {
-  console.log(links)
   const { twitter, github, email, website } = links;
   return (
     <HeaderWrapper>
@@ -73,8 +72,8 @@ const Link = styled.a`
 
 const Avatar = styled(Img)`
   border-radius: 50%;
-  max-height: 190px;
-  max-width: 190px;
+  height: 190px;
+  width: 190px;
   position: relative;
   top: 40px;
   border: 3.6px solid whitesmoke;

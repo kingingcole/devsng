@@ -58,6 +58,10 @@ exports.createPages = ({ graphql, actions }) => {
       const next = index === 0 ? null : posts[index - 1].node
       let { slug } = profile.node.fields
 
+      // slug contains preceeding and proceeding '/' eg '/new-user/'
+      // remove the slashes
+      let authorIdentifier = slug.slice(1, slug.length-1)
+
       let path = `profile${slug}`
 
       createPage({
@@ -67,6 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
           slug: profile.node.fields.slug,
           previous,
           next,
+          authorIdentifier
         },
       })
     })

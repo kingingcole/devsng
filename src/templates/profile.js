@@ -13,7 +13,7 @@ class ProfileTemplate extends React.Component {
     const posts = this.props.data.allMarkdownRemark.edges
 
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { slug } = this.props.pageContext
+    const { slug, authorIdentifier } = this.props.pageContext
 
     const { name } = author.frontmatter
     const {avatar} = author.frontmatter
@@ -30,7 +30,7 @@ class ProfileTemplate extends React.Component {
       email,
       website
     }
-
+    console.log(slug, author)
 
     return (
       <Layout>
@@ -49,7 +49,7 @@ export default ProfileTemplate
 
 
 export const userQuery = graphql`
-  query UserProfileBySlug($slug: String!) {
+  query UserProfileBySlug($slug: String!, $authorIdentifier: String!) {
     site {
       siteMetadata {
         title
@@ -81,7 +81,7 @@ export const userQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}, author: {eq: "emeruche-cole"}}}, , sort: {order: DESC, fields: frontmatter___date}) {
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "post"}, author: {eq: $authorIdentifier}}}, , sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           id
