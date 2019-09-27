@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 import { COLORS } from "../utils/constants"
 import Img from "gatsby-image"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 
 
-const ProfileHeader = ({name, avatar}) => {
+const ProfileHeader = ({ name, avatar }) => {
   return (
     <HeaderWrapper>
       <Container>
@@ -19,7 +19,11 @@ const HeaderWrapper = styled.div`
   height: 150px;
   background: ${COLORS.primaryColor};
   font-family: 'Fira Sans', sans-serif;
-  padding: 0 10px
+  padding: 0 10px;
+  
+  @media (max-width: 570px) {
+    height: 100px
+  }
 `
 
 const ProfileName = styled.p`
@@ -37,7 +41,7 @@ const Avatar = styled(Img)`
   @media (max-width: 570px) {
     max-height: 150px;
     max-width: 150px;
-    top: 80px
+    top: 30px
   }
   
 `

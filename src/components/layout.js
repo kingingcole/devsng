@@ -34,7 +34,7 @@ const Main = styled.main`
   margin-top: 69px;
   
    @media (max-width: 570px) {
-    margin-top: 59px
+    margin-top: 57px
   }
 `
 
