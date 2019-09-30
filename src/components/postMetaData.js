@@ -90,6 +90,7 @@ const AuthorLink = styled(Link)`
   display: inline;
   color: #000;
   font-size: 14px;
+  font-weight: bold;
   opacity: 0.5;
   margin: 0px 5px;
   mix-blend-mode: normal;
