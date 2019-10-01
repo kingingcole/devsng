@@ -62,14 +62,14 @@ const PostLink = styled(Link)`
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
-  color: ${COLORS.primaryColor};
+  color: black;
   text-decoration: none;
   box-shadow: none;
   text-transform: capitalize;
   margin-bottom: 10px;
   &:hover,
   &:active{
-    color: ${COLORS.secondaryColor};
+    color: ${COLORS.primaryColor};
     border: none;
     text-decoration: none
   }
