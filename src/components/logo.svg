@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="118px" height="38px" viewBox="0 0 118 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="CircularStd-Black, Circular Std" font-size="31.0581645" font-weight="700">
+        <g id="Desktop" transform="translate(-103.000000, -35.000000)">
+            <g id="Group-2">
+                <g id="Group-10" transform="translate(102.000000, 30.000000)">
+                    <g id="logo">
+                        <text id="{)" fill="#12AD82" letter-spacing="4.4">
+                            <tspan x="0" y="31">{</tspan>
+                            <tspan x="16.3573933" y="31">)</tspan>
+                        </text>
+                        <text id="evs.ng" letter-spacing="-0.880000013" fill="#4A5158">
+                            <tspan x="29.04" y="35.4">evs.n</tspan>
+                            <tspan x="102.378586" y="35.4">g</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {ReactComponent as LogoSVG} from './logo.svg'
 
 const LogoWrapper = styled.p`
   color: white;
@@ -9,8 +10,11 @@ const LogoWrapper = styled.p`
 `
 
 const Logo = () => {
+  console.log(LogoSVG)
   return (
-    <LogoWrapper>{`{)`}</LogoWrapper>
+	<>
+		dev
+	</>
   )
 }
 

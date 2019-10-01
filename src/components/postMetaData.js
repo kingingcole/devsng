@@ -54,7 +54,7 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author , hi
 }
 
 const MetaData = styled.div`
-  margin-top: 0px;
+  margin-top: 10px;
 `
 
 const AuthorDetails = styled.div`
@@ -68,7 +68,6 @@ const PostDetails = styled.div`
 const AuthorAvatar = styled(Img)`
   border-radius: 50%;
   padding: 10px;
-  border: 1px solid ${COLORS.primaryColor};
   padding: 0px;
   margin: 0px !important
 `
