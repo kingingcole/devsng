@@ -46,8 +46,8 @@ const FeaturedImage = styled(Img)`
 `
 
 const Description = styled.p`
-font-size: 14px;
-line-height: 1.2em;
+font-size: 20px;
+line-height: 29px;
 color: #4D4141;
 margin: 5px 0;
 
@@ -58,18 +58,18 @@ margin: 5px 0;
 `
 
 const PostLink = styled(Link)`
-  font-style: normal;
+  font-style: 800;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 20px;
-  color: black;
+  font-size: 24px;
+  line-height: 28px;
+  color: ${COLORS.primaryColor};
   text-decoration: none;
   box-shadow: none;
   text-transform: capitalize;
   margin-bottom: 10px;
   &:hover,
   &:active{
-    color: ${COLORS.primaryColor};
+    color: ${COLORS.secondaryColor};
     border: none;
     text-decoration: none
   }

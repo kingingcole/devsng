@@ -76,10 +76,10 @@ const AuthorAvatar = styled(Img)`
 const Text = styled.p`
   display: inline;
   color: #000;
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.5;
   margin: 0px;
-  margin-right: 8px;
+  margin-right: 15px;
   mix-blend-mode: normal;
   @media (max-width: 570px) {
     font-size: 12px;
@@ -89,7 +89,8 @@ const Text = styled.p`
 const AuthorLink = styled(Link)`
   display: inline;
   color: #000;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 19px;
   font-weight: bold;
   opacity: 0.5;
   margin: 0px 5px;

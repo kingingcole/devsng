@@ -52,13 +52,14 @@ const PostsWrapper = styled.div`
 `
 
 const Text = styled.h3`
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-weight: bold
+  margin-bottom: 26px;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 34px;
 `
 
 const PostCount = styled.span`
-  font-size: 40px;
+  font-size: 50px;
   font-family: 'Vibes', cursive;
   margin-left: 6px;
   font-style: italic;
