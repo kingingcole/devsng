@@ -70,7 +70,7 @@ const FeaturedImage = styled(Img)`
 const ArticleText = styled.section`
   max-width: ${MAX_WIDTH};
   margin: 20px auto;
-  font-size: 1em;
+  font-size: 1.25em;
   font-family: 'Lato', sans-serif;
 `
 
