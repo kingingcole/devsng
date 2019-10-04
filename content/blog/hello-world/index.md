@@ -5,6 +5,7 @@ description: "Hello World"
 published: true
 author: emeruche-cole
 type: post
+tags: ["react", "gatsby"]
 ---
 
 This is my first post on my new fake blog! How exciting!

@@ -75,7 +75,7 @@ const Avatar = styled(Img)`
   width: 190px;
   position: relative;
   top: 40px;
-  border: 8px solid whitesmoke;
+  border: 8px solid white;
   
   @media (max-width: 570px) {
     max-height: 130px;

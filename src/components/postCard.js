@@ -4,17 +4,25 @@ import { Link } from "gatsby"
 import PostMetaData from "./postMetaData"
 import Img from "gatsby-image"
 import { COLORS } from "../utils/constants"
+import kebabCase from "lodash/kebabCase"
 
 
-const PostCard = ({ title, description, url, readingTime, image, date, author, hideAuthorDetails}) => {
+const PostCard = ({ title, tags, description, url, readingTime, image, date, author, hideAuthorDetails}) => {
   if (description.length > 150) {
     description = description.slice(0, 150) + "..."
   }
+
+  console.log(tags)
+
 
   return (
     <PostCardWrapper>
       <div className="row">
         <div className="col-9 col-md-9">
+          {tags && <TagsSection>
+            <Link to={`/tags/${kebabCase(tags[0])}/`}><PrimaryTag>{tags[0].toUpperCase()}</PrimaryTag></Link>
+            <Link to={`/tags/${kebabCase(tags[1])}/`}><SecondaryTag>{tags[1].toUpperCase()}</SecondaryTag></Link>
+          </TagsSection>}
           <PostLink to={url}>{title}</PostLink>
           <Description className="d-none d-sm-block"
                        dangerouslySetInnerHTML={{
@@ -58,8 +66,7 @@ margin: 5px 0;
 `
 
 const PostLink = styled(Link)`
-  font-style: 800;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   color: ${COLORS.primaryColor};
@@ -78,6 +85,26 @@ const PostLink = styled(Link)`
   }
 `
 
+const TagsSection = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 9px;
+  max-width: 300px;
+`
+
+const Tag = styled.li`
+  display: inline;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 17px;
+`
+const PrimaryTag = styled(Tag)`
+  color: #878F97
+`
+const SecondaryTag = styled(Tag)`
+  color: #BCC3C0
+`
 
 export default PostCard
 
