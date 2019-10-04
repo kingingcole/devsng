@@ -11,11 +11,11 @@ a{
 }
 
 a:hover, a:focus{
-    color: #90c695;
+    color: #90c695 !important;
     /*text-decoration: underline !important;*/
 }
 
-body{ background: whitesmoke}
+body{ background: white}
 
 img{
     margin: 0 !important

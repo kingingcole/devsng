@@ -68,7 +68,7 @@ const FeaturedImage = styled(Img)`
   margin: 20px
 `
 const ArticleText = styled.section`
-  max-width: ${MAX_WIDTH};
+  max-width: ${MAX_WIDTH} ;
   margin: 20px auto;
   font-size: 1.25em;
   font-family: 'Lato', sans-serif;
@@ -79,7 +79,8 @@ const Title = styled.h1`
   font-weight: 900;
   font-size: 48px;
   max-width: 700px;
-  margin: auto;
+  margin: 20px auto;
+  line-height: 64px;
   
   @media (max-width: 570px) {
     font-size: 30px;

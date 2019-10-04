@@ -6,6 +6,7 @@ featuredImage: "./featured-image.jpg"
 published: true
 author: emeruche-cole
 type: post
+tags: ["react", "gatsby"]
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

@@ -18,6 +18,8 @@ const ProfilePostsSection = ({ posts }) => {
           const { author } = node.frontmatter
           const readingTime = node.fields.readingTime.text
           const { featuredImage } = node.frontmatter
+          const { tags } = node.frontmatter
+          console.log(tags)
 
           let image
           if (featuredImage) {
@@ -26,6 +28,7 @@ const ProfilePostsSection = ({ posts }) => {
 
           return (
             <PostCard
+              tags={tags}
               hideAuthorDetails={true}
               key={slug}
               description={description}
