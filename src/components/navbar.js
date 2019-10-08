@@ -30,7 +30,7 @@ const NavBar = styled.nav`
   background: ${COLORS.primaryColor};
   background: white;
   box-shadow: 0px 2px 5px whitesmoke;
-  padding: 13px 0;
+  padding: 15px 0;
   font-size: 18px;
   position: fixed;
   height: auto;
@@ -40,7 +40,7 @@ const NavBar = styled.nav`
   
   @media (max-width: 570px) {
     // padding: 10px 0;
-    font-size: 0.8em !important
+    font-size: 14px !important
   }
 `
 const NavLinkList = styled.li`
@@ -53,8 +53,8 @@ const NavLink = styled(Link)`
   text-decoration: none !important;
   color: #F9FAFB !important;
   color: ${COLORS.primaryColor} !important;
-  box-shadow: none
-
+  box-shadow: none;
+  font-weight: bold
 `
 
 const NavLogo = styled(Link)``
