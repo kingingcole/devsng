@@ -18,11 +18,15 @@ const PostCard = ({ title, tags, description, url, readingTime, image, date, aut
   return (
     <PostCardWrapper>
       <div className="row">
-        <div className="col-9 col-md-9">
+        <div className="col-12">
           {tags && <TagsSection>
             <PrimaryTag to={`/tags/${kebabCase(tags[0])}/`}>{tags[0].toUpperCase()}</PrimaryTag>
             <SecondaryTag to={`/tags/${kebabCase(tags[1])}/`}>{tags[1].toUpperCase()}</SecondaryTag>
           </TagsSection>}
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-9 col-md-9">
           <PostLink to={url} data-test-id={`post-title`}>{title}</PostLink>
           <Description className="d-none d-sm-block"
                        dangerouslySetInnerHTML={{
