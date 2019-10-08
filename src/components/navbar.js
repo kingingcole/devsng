@@ -40,7 +40,7 @@ const NavBar = styled.nav`
   
   @media (max-width: 570px) {
     // padding: 10px 0;
-    font-size: 15px !important
+    font-size: 14px !important
   }
 `
 const NavLinkList = styled.li`
@@ -53,8 +53,8 @@ const NavLink = styled(Link)`
   text-decoration: none !important;
   color: #F9FAFB !important;
   color: ${COLORS.primaryColor} !important;
-  box-shadow: none
-
+  box-shadow: none;
+  font-weight: bold
 `
 
 const NavLogo = styled(Link)``
