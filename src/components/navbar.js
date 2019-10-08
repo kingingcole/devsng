@@ -40,13 +40,14 @@ const NavBar = styled.nav`
   
   @media (max-width: 570px) {
     // padding: 10px 0;
-    font-size: 0.9em !important
+    font-size: 0.8em !important
   }
 `
 const NavLinkList = styled.li`
   list-style-type: none;
   margin: 0 10px;
   display: inline
+  
 `
 const NavLink = styled(Link)`
   text-decoration: none !important;

@@ -31,10 +31,10 @@ class Layout extends React.Component {
 }
 
 const Main = styled.main`
-  margin-top: 68px;
+  margin-top: 60px;
   
    @media (max-width: 570px) {
-    margin-top: 57px
+    margin-top: 50px
   }
 `
 
