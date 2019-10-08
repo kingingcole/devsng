@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import logo from '../../content/assets/logo-1.png'
 
-const LogoWrapper = styled.p`
-  color: white;
-  margin: 0;
-  font-size: 28.8px;
-  font-weight: 800
+const LogoWrapper = styled.div`
+  height: 43px
 `
 
 const Logo = () => {
+  console.log(logo)
   return (
-    <LogoWrapper>{`{)`}</LogoWrapper>
+    <LogoWrapper>
+      <img src={logo} alt=""/>
+    </LogoWrapper>
   )
 }
 

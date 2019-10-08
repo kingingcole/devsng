@@ -26,6 +26,8 @@ const Nav = () => {
 
 const NavBar = styled.nav`
   background: ${COLORS.primaryColor};
+  background: white;
+  box-shadow: 0px 2px 5px whitesmoke;
   padding: 13px 0;
   font-size: 18px;
   position: fixed;
@@ -46,6 +48,7 @@ const NavLinkList = styled.li`
 const NavLink = styled(Link)`
   text-decoration: none !important;
   color: #F9FAFB !important;
+  color: ${COLORS.primaryColor} !important;
   box-shadow: none
 
 `

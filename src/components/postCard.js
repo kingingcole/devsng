@@ -23,7 +23,7 @@ const PostCard = ({ title, tags, description, url, readingTime, image, date, aut
             <Link to={`/tags/${kebabCase(tags[0])}/`}><PrimaryTag>{tags[0].toUpperCase()}</PrimaryTag></Link>
             <Link to={`/tags/${kebabCase(tags[1])}/`}><SecondaryTag>{tags[1].toUpperCase()}</SecondaryTag></Link>
           </TagsSection>}
-          <PostLink to={url}>{title}</PostLink>
+          <PostLink to={url} data-test-id={`post-title`}>{title}</PostLink>
           <Description className="d-none d-sm-block"
                        dangerouslySetInnerHTML={{
                          __html: description,
