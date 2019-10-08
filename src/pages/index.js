@@ -18,7 +18,15 @@ class BlogIndex extends React.Component {
     const PostsWrapper = styled.div`
       max-width: ${PAGE_MAX_WIDTH};
       margin: auto;
-      padding: 30px 10px
+      padding: 20px 10px
+    `
+
+    const Text = styled.h1`   
+    margin-bottom: 26px;
+    margin-top: 16px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 34px
     `
 
     return (
@@ -26,6 +34,7 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <ArticleHeader/>
         <PostsWrapper>
+          <Text>Latest Articles</Text>
           {posts.map(({ node }, i) => {
             const title = node.frontmatter.title || node.fields.slug
             const description = node.frontmatter.description || node.excerpt

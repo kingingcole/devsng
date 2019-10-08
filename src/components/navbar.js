@@ -10,8 +10,10 @@ const Nav = () => {
     <NavBar>
       <div className="container" style={{maxWidth: '1100px'}}>
         <div className="row">
-          <div className="col-2"><Logo/></div>
-          <div className="col-10 text-right my-auto">
+          <div className="col-3 col-lg-2">
+            <NavLogo><Logo /></NavLogo>
+          </div>
+          <div className="col-9 col-lg-10 text-right my-auto">
             <ul className="col-12 mb-0">
               <NavLinkList className=""><NavLink to="/">Home</NavLink></NavLinkList>
               <NavLinkList className=""><NavLink to="/">About</NavLink></NavLinkList>
@@ -31,18 +33,19 @@ const NavBar = styled.nav`
   padding: 13px 0;
   font-size: 18px;
   position: fixed;
+  height: auto;
   width: 100%;
   top: 0;
   z-index: 9999;
   
   @media (max-width: 570px) {
-    padding: 8px 0;
-    font-size: 1em !important
+    // padding: 10px 0;
+    font-size: 0.9em !important
   }
 `
 const NavLinkList = styled.li`
   list-style-type: none;
-  margin: 0 15px;
+  margin: 0 10px;
   display: inline
 `
 const NavLink = styled(Link)`
@@ -52,6 +55,8 @@ const NavLink = styled(Link)`
   box-shadow: none
 
 `
+
+const NavLogo = styled(Link)``
 
 
 export default Nav

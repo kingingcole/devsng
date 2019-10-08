@@ -14,10 +14,10 @@ const ProfileHeader = ({ name, avatar, links }) => {
         <Avatar sizes={avatar.childImageSharp.fluid}/>
         <ProfileName>{name}</ProfileName>
         <ProfileLinks>
-          {twitter && <Link href={twitter}><FeatherIcon icon="twitter" size="19"/></Link>}
-          {github && <Link href={github}><FeatherIcon icon="github" size="19"/></Link>}
-          {email && <Link href={email}><FeatherIcon icon="mail" size="19"/></Link>}
-          {website && <Link href={website}><FeatherIcon icon="link" size="19"/></Link>}
+          {twitter && <Link href={twitter}><FeatherIcon icon="twitter" size="18"/></Link>}
+          {github && <Link href={github}><FeatherIcon icon="github" size="18"/></Link>}
+          {email && <Link href={email}><FeatherIcon icon="mail" size="18"/></Link>}
+          {website && <Link href={website}><FeatherIcon icon="link" size="18"/></Link>}
         </ProfileLinks>
       </Container>
     </HeaderWrapper>
@@ -25,7 +25,7 @@ const ProfileHeader = ({ name, avatar, links }) => {
 }
 
 const HeaderWrapper = styled.div`
-  height: 150px;
+  height: 170px;
   background: ${COLORS.primaryColor};
   padding: 0 10px;
   margin-bottom: 80px;
@@ -41,12 +41,12 @@ const ProfileName = styled.p`
   color: white;
   position: relative;
   left: 220px;
-  bottom: 100px;
+  bottom: 80px;
   font-size: 28px;
   
   @media (max-width: 570px) {
     left: 140px;
-    font-size: 20px;
+    font-size: 17px;
     bottom: 67px;
   }
 `
@@ -54,7 +54,7 @@ const ProfileName = styled.p`
 const ProfileLinks = styled.div`
   position: relative;
   left: 220px;
-  bottom: 80px;
+  bottom: 60px;
   font-size: 1.3em;
   margin-top: 10px;
   
@@ -74,7 +74,7 @@ const Avatar = styled(Img)`
   height: 190px;
   width: 190px;
   position: relative;
-  top: 40px;
+  top: 60px;
   border: 8px solid white;
   
   @media (max-width: 570px) {

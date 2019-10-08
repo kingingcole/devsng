@@ -13,7 +13,7 @@ const ArticleHeader = () => {
 }
 
 const HeaderWrapper = styled.div`
-  padding: 20px 0;
+  padding: 30px 0;
   background: ${COLORS.primaryColor};
   
   @media (max-width: 570px) {

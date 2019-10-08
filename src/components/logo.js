@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import logo from '../../content/assets/logo-1.png'
 
 const LogoWrapper = styled.div`
-  height: 43px
+  padding: auto;
+  margin: auto
 `
 
 const Logo = () => {

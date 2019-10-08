@@ -20,8 +20,8 @@ const PostCard = ({ title, tags, description, url, readingTime, image, date, aut
       <div className="row">
         <div className="col-9 col-md-9">
           {tags && <TagsSection>
-            <Link to={`/tags/${kebabCase(tags[0])}/`}><PrimaryTag>{tags[0].toUpperCase()}</PrimaryTag></Link>
-            <Link to={`/tags/${kebabCase(tags[1])}/`}><SecondaryTag>{tags[1].toUpperCase()}</SecondaryTag></Link>
+            <PrimaryTag to={`/tags/${kebabCase(tags[0])}/`}>{tags[0].toUpperCase()}</PrimaryTag>
+            <SecondaryTag to={`/tags/${kebabCase(tags[1])}/`}>{tags[1].toUpperCase()}</SecondaryTag>
           </TagsSection>}
           <PostLink to={url} data-test-id={`post-title`}>{title}</PostLink>
           <Description className="d-none d-sm-block"
@@ -88,17 +88,25 @@ const PostLink = styled(Link)`
 const TagsSection = styled.ul`
   list-style-type: none;
   margin: 0;
-  margin-bottom: 9px;
+  margin-bottom: 7px;
   max-width: 300px;
+  
+  @media (max-width: 570px) {
+    margin-bottom: 6px
+  }
 `
 
-const Tag = styled.li`
+const Tag = styled(Link)`
   display: inline;
   margin-right: 10px;
   font-weight: bold;
   font-size: 12px;
   line-height: 17px;
+  &hover, &focus: {
+    color: red
+  }
 `
+
 const PrimaryTag = styled(Tag)`
   color: #878F97
 `
