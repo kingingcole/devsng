@@ -40,6 +40,8 @@ const PostCard = ({ title, tags, description, url, readingTime, image, date, aut
         <div className="col-3 col-md-3 text-right">
           <FeaturedImage sizes={image}/>
         </div>}
+        <div className="col-12">
+        </div>
       </div>
     </PostCardWrapper>
   )
@@ -77,7 +79,6 @@ const PostLink = styled(Link)`
   text-decoration: none;
   box-shadow: none;
   text-transform: capitalize;
-  font-variant: small-caps;
   margin-bottom: 10px;
   &:hover,
   &:active{

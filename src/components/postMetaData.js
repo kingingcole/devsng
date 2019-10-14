@@ -1,10 +1,10 @@
-import React from "react"
+import React, {Fragment} from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { COLORS } from "../utils/constants"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
-const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author , hideAuthorDetails}) => {
+const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author, hideAuthorDetails }) => {
 
 
   const data = useStaticQuery(graphql`
@@ -39,31 +39,35 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author , hi
   const { name } = postAuthor.node.frontmatter
   const avatar = postAuthor.node.frontmatter.avatar.childImageSharp.fixed
 
+  // return (
+  //   <MetaData>
+  //     {hideAuthorDetails !== true && <AuthorDetails className={`row`}>
+  //       <AuthorAvatar fixed={avatar}/>
+  //       <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
+  //       <PostDetails>
+  //         <Text>{readingTime}</Text>
+  //         <Text>{date}</Text>
+  //       </PostDetails>
+  //     </AuthorDetails>}
+  //   </MetaData>
+  // )
   return (
-    <MetaData>
-      {hideAuthorDetails !== true && <AuthorDetails className={`row`}>
-        <AuthorAvatar fixed={avatar}/>
-        <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
-      </AuthorDetails>}
-      <PostDetails>
-        <Text>{readingTime}</Text>
-        <Text>{date}</Text>
-      </PostDetails>
+    <MetaData className="row">
+      {hideAuthorDetails !== true && <Fragment>
+      <AuthorAvatar fixed={avatar}/>
+      <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
+      </Fragment>}
+      <Text className={`my-auto`}>{readingTime}</Text>
+      <Text className={`my-auto`}>{date}</Text>
     </MetaData>
   )
 }
 
 const MetaData = styled.div`
   margin-top: 0px;
+  margin: auto;
 `
 
-const AuthorDetails = styled.div`
-  margin: auto
-`
-
-const PostDetails = styled.div`
-    margin: auto;
-`
 
 const AuthorAvatar = styled(Img)`
   border-radius: 50%;
@@ -73,30 +77,33 @@ const AuthorAvatar = styled(Img)`
   margin: 0px !important
 `
 
-const Text = styled.p`
-  display: inline;
+const Text = styled.span`
   color: #000;
   font-size: 16px;
   opacity: 0.5;
-  margin: 0px;
-  margin-right: 15px;
+  margin-right: 10px;
   mix-blend-mode: normal;
   @media (max-width: 570px) {
     font-size: 12px;
   }
+  @media (max-width: 420px) {
+    margin-right: 5px;
+  }
 `
 
 const AuthorLink = styled(Link)`
-  display: inline;
   color: #000;
   font-size: 16px;
   line-height: 19px;
   font-weight: bold;
   opacity: 0.5;
-  margin: 0px 5px;
+  margin: 0px 10px;
   mix-blend-mode: normal;
   @media (max-width: 570px) {
     font-size: 12px;
+  }
+  @media (max-width: 420px) {
+    margin: 0px 5px;
   }
   &:hover,
   &:active{
