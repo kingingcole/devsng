@@ -46,10 +46,8 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author, hid
       <AuthorAvatar fixed={avatar}/>
       <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
       </Fragment>}
-      <PostDetails className={`my-auto`}>
-        <Text>{readingTime}</Text>
-        <Text>{date}</Text>
-      </PostDetails>
+      <Text className={`my-auto`}>{readingTime}</Text>
+      <Text className={`my-auto`}>{date}</Text>
     </MetaData>
   )
 }
