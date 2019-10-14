@@ -28,6 +28,7 @@ const LargeText = styled.h1`
   line-height: 63px;
   text-align: center;
   color: #FFFFFF;
+  font-weight: 700
 `
 const SmallText = styled.p`
   font-style: normal;

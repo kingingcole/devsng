@@ -52,27 +52,8 @@ const PostCardWrapper = styled.div`
   padding: 10px 0;
 `
 
-const FeaturedImage = styled(Img)`
-  max-height: 150px;
-  max-width: 150px;
-  margin-left: auto;
-  border-radius: 3px
-`
-
-const Description = styled.p`
-font-size: 20px;
-line-height: 29px;
-color: #4D4141;
-margin: 5px 0;
-
-@media (max-width: 570px) {
-    font-size: 12px;
-  }
-  
-`
-
 const PostLink = styled(Link)`
-  font-weight: 500;
+  font-weight: 900;
   font-size: 24px;
   line-height: 28px;
   color: ${COLORS.primaryColor};
@@ -90,6 +71,26 @@ const PostLink = styled(Link)`
     font-size: 18px;
   }
 `
+
+const FeaturedImage = styled(Img)`
+  max-height: 150px;
+  max-width: 150px;
+  margin-left: auto;
+  border-radius: 3px
+`
+
+const Description = styled.p`
+font-size: 20px;
+line-height: 29px;
+color: #4D4141;
+margin-bottom: 5px;
+
+@media (max-width: 570px) {
+    font-size: 12px;
+  }
+  
+`
+
 
 const TagsSection = styled.ul`
   list-style-type: none;

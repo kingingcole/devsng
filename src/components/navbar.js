@@ -30,7 +30,7 @@ const NavBar = styled.nav`
   background: ${COLORS.primaryColor};
   background: white;
   box-shadow: 0px 2px 5px whitesmoke;
-  padding: 15px 0;
+  padding: 12px 0;
   font-size: 18px;
   position: fixed;
   height: auto;
@@ -54,7 +54,7 @@ const NavLink = styled(Link)`
   color: #F9FAFB !important;
   color: ${COLORS.primaryColor} !important;
   box-shadow: none;
-  font-weight: 400;
+  font-weight: 700;
 `
 
 const NavLogo = styled(Link)``

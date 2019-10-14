@@ -64,7 +64,7 @@ const ArticleWrapper = styled.article`
 
 const ArticleHead = styled.div`
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `
 
 const FeaturedImage = styled(Img)`
@@ -82,7 +82,8 @@ const Title = styled.h1`
   font-weight: 900;
   font-size: 48px;
   max-width: 700px;
-  margin: 15px auto;
+  margin: 10px auto;
+  margin-bottom: 5px;
   line-height: 64px;
   
   @media (max-width: 570px) {

@@ -57,22 +57,26 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author, hid
       <AuthorAvatar fixed={avatar}/>
       <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
       </Fragment>}
-      <Text className={`my-auto`}>{readingTime}</Text>
-      <Text className={`my-auto`}>{date}</Text>
+      <PostDetails>
+        <Text className={`my-auto`}>{readingTime}</Text>
+        <Text className={`my-auto`}>{date}</Text>
+      </PostDetails>
     </MetaData>
   )
 }
 
 const MetaData = styled.div`
   margin-top: 0px;
-  margin: auto;
+  margin: 5px auto;
 `
 
+const PostDetails = styled.span`
+`
 
 const AuthorAvatar = styled(Img)`
   border-radius: 50%;
   padding: 10px;
-  border: 1px solid ${COLORS.primaryColor};
+  // border: 1px solid ${COLORS.primaryColor};
   padding: 0px;
   margin: 0px !important
 `
@@ -86,9 +90,6 @@ const Text = styled.span`
   @media (max-width: 570px) {
     font-size: 12px;
   }
-  @media (max-width: 420px) {
-    margin-right: 5px;
-  }
 `
 
 const AuthorLink = styled(Link)`
@@ -101,9 +102,6 @@ const AuthorLink = styled(Link)`
   mix-blend-mode: normal;
   @media (max-width: 570px) {
     font-size: 12px;
-  }
-  @media (max-width: 420px) {
-    margin: 0px 5px;
   }
   &:hover,
   &:active{
