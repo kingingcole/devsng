@@ -44,9 +44,6 @@ class BlogPostTemplate extends React.Component {
             </div>
           </ArticleHead>
           {featuredImage && <FeaturedImage sizes={image}/>}
-          {/*<div className="text-left" style={{ maxWidth: MAX_WIDTH, margin: "auto" }}>*/}
-            {/*<PostMetaData readingTime={readingTime} date={date} author={author} center={true}/>*/}
-          {/*</div>*/}
           <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
         </ArticleWrapper>
       </Layout>

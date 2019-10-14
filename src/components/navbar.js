@@ -54,7 +54,7 @@ const NavLink = styled(Link)`
   color: #F9FAFB !important;
   color: ${COLORS.primaryColor} !important;
   box-shadow: none;
-  font-weight: 700;
+  font-weight: 500;
 `
 
 const NavLogo = styled(Link)``

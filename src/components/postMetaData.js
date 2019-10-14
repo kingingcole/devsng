@@ -39,27 +39,16 @@ const PostMetaData = ({ readingTime, date, authorAvatar, authorName, author, hid
   const { name } = postAuthor.node.frontmatter
   const avatar = postAuthor.node.frontmatter.avatar.childImageSharp.fixed
 
-  // return (
-  //   <MetaData>
-  //     {hideAuthorDetails !== true && <AuthorDetails className={`row`}>
-  //       <AuthorAvatar fixed={avatar}/>
-  //       <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
-  //       <PostDetails>
-  //         <Text>{readingTime}</Text>
-  //         <Text>{date}</Text>
-  //       </PostDetails>
-  //     </AuthorDetails>}
-  //   </MetaData>
-  // )
+
   return (
     <MetaData className="row">
       {hideAuthorDetails !== true && <Fragment>
       <AuthorAvatar fixed={avatar}/>
       <AuthorLink to={authorProfileLink} className={`my-auto`}>{name}</AuthorLink>
       </Fragment>}
-      <PostDetails>
-        <Text className={`my-auto`}>{readingTime}</Text>
-        <Text className={`my-auto`}>{date}</Text>
+      <PostDetails className={`my-auto`}>
+        <Text>{readingTime}</Text>
+        <Text>{date}</Text>
       </PostDetails>
     </MetaData>
   )
