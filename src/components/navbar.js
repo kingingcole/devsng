@@ -1,64 +1,104 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from './logo'
+import logo from '../../content/assets/logo-1.png'
 import { Link } from "gatsby"
 import {COLORS} from '../utils/constants'
 
 
+const BREAK_POINT = '600px'
+const NAVBAR_HEIGHT = '8vh'
+const NAV_ON_MOBILE_HEIGHT = '92vh'
+
 const Nav = () => {
   return (
     <NavBar>
-      <div className="container" style={{maxWidth: '1100px'}}>
-        <div className="row">
-          <div className="col-3 col-lg-2">
-            <NavLogo><Logo /></NavLogo>
-          </div>
-          <div className="col-9 col-lg-10 text-right my-auto">
-            <ul className="col-12 mb-0">
-              <NavLinkList className=""><NavLink to="/">Home</NavLink></NavLinkList>
-              <NavLinkList className=""><NavLink to="/">About</NavLink></NavLinkList>
-              <NavLinkList className=""><NavLink to="/">Home</NavLink></NavLinkList>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <NavLogo>
+        <img src={logo} alt=""/>
+      </NavLogo>
+      <NavLinks>
+        <NavLinkList><NavLink to={`#`}>Home</NavLink></NavLinkList>
+        <NavLinkList><NavLink to={`#`}>About</NavLink></NavLinkList>
+        <NavLinkList><NavLink to={`#`}>Services</NavLink></NavLinkList>
+      </NavLinks>
+      <Hamburger>
+        <HamburgerLine />
+        <HamburgerLine />
+        <HamburgerLine />
+      </Hamburger>
     </NavBar>
   )
 }
 
 const NavBar = styled.nav`
-  background: ${COLORS.primaryColor};
   background: white;
-  box-shadow: 0px 2px 5px whitesmoke;
-  padding: 12px 0;
-  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: ${NAVBAR_HEIGHT};
   position: fixed;
-  height: auto;
   width: 100%;
-  top: 0;
-  z-index: 9999;
+  z-index: 1000;
+  padding: 0 5%
+`
+
+const NavLinks = styled.ul`
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
   
-  @media (max-width: 570px) {
-    // padding: 10px 0;
-    font-size: 14px !important
+  @media screen and (max-width: 850px){
+    width: 40%;
+  }
+  
+  @media screen and (max-width: ${BREAK_POINT}){
+    flex-direction: column;
+    position: absolute;
+    background: ${COLORS.primaryColor};
+    top:  ${NAVBAR_HEIGHT};
+    height: ${NAV_ON_MOBILE_HEIGHT};
+    right: 0px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 `
+
 const NavLinkList = styled.li`
   list-style-type: none;
-  margin: 0 10px;
-  display: inline
+  margin: 0;
   
+  @media screen and (max-width:  ${BREAK_POINT}){
+    margin: 20px 0
+  }
 `
 const NavLink = styled(Link)`
-  text-decoration: none !important;
-  color: #F9FAFB !important;
-  color: ${COLORS.primaryColor} !important;
-  box-shadow: none;
-  font-weight: 500;
+  font-weight: 700;
+  
+  @media screen and (max-width:  ${BREAK_POINT}){
+    color: white;
+  }
 `
 
-const NavLogo = styled(Link)``
+const NavLogo = styled.div`
+  width: 5em
+`
 
+const Hamburger = styled.div`
+  display: none;
+  cursor: pointer;
+  
+  @media screen and (max-width:  ${BREAK_POINT}){
+    display: block
+  }
+`
+
+const HamburgerLine = styled.div`
+  width: 20px;
+  margin: 3px;
+  height: 2px; 
+  background: ${COLORS.primaryColor}
+`
 
 export default Nav
 
