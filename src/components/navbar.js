@@ -12,7 +12,14 @@ const NAV_ON_MOBILE_HEIGHT = '91vh'
 const Nav = () => {
   const toggleNav = () => {
     const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('nav-active')
+    const hamburgerLines = document.querySelectorAll('.hamburger-line');
+    navLinks.classList.toggle('nav-active');
+
+    const hamburgerLines_one_and_three = [hamburgerLines[0], hamburgerLines[2]];
+    hamburgerLines_one_and_three.forEach(hamburgerLine => {
+      hamburgerLine.classList.toggle('line1and3_active')
+    })
+    hamburgerLines[1].classList.toggle('line2_active')
   }
 
   return (
@@ -26,9 +33,9 @@ const Nav = () => {
         <NavLinkList><NavLink to={`#`}>Services</NavLink></NavLinkList>
       </NavLinks>
       <Hamburger className={`hamburger`} onClick={toggleNav}>
-        <HamburgerLine />
-        <HamburgerLine />
-        <HamburgerLine />
+        <HamburgerLine className={`hamburger-line`}/>
+        <HamburgerLine className={`hamburger-line`}/>
+        <HamburgerLine className={`hamburger-line`}/>
       </Hamburger>
     </NavBar>
   )
@@ -85,6 +92,7 @@ const NavLink = styled(Link)`
   
   @media screen and (max-width:  ${BREAK_POINT}){
     color: white;
+    font-size: 20px
   }
 `
 
@@ -102,11 +110,14 @@ const Hamburger = styled.div`
 `
 
 const HamburgerLine = styled.div`
-  width: 20px;
-  margin: 3px;
+  margin: 5px;
   height: 2px; 
-  background: ${COLORS.primaryColor}
+  width: 20px;
+  background: ${COLORS.primaryColor};
+  padding: 0;
+  transition: all 0.4s;
 `
+
 
 export default Nav
 

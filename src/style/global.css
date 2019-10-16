@@ -42,5 +42,12 @@ p {
 .nav-active {
     display: flex !important;
     transform: translateY(0) !important;
+}
 
+.line1and3_active {
+    width: 25px !important;
+}
+
+.line2_active {
+    width: 15px !important;
 }
