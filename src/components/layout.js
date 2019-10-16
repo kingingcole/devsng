@@ -31,11 +31,7 @@ class Layout extends React.Component {
 }
 
 const Main = styled.main`
-  margin-top: 60px;
-  
-   @media (max-width: 570px) {
-    margin-top: 50px
-  }
+  margin-top: 9vh
 `
 
 export default Layout

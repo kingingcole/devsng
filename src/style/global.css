@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,21 +9,23 @@ blockquote {
     padding-left: 14px
 }
 
-a{
+a {
     border-bottom: none !important;
     text-decoration: none !important;
     box-shadow: none;
     color: #14957D;
 }
 
-a:hover, a:focus{
+a:hover, a:focus {
     color: #90c695 !important;
     /*text-decoration: underline !important;*/
 }
 
-body{ background: white}
+body {
+    background: white
+}
 
-img{
+img {
     margin: 0 !important
 }
 
@@ -33,6 +35,12 @@ h3,
 h4,
 h5,
 h6,
-p{
+p {
     font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.nav-active {
+    display: flex !important;
+    transform: translateY(0) !important;
+
 }

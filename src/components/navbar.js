@@ -6,21 +6,26 @@ import {COLORS} from '../utils/constants'
 
 
 const BREAK_POINT = '600px'
-const NAVBAR_HEIGHT = '8vh'
-const NAV_ON_MOBILE_HEIGHT = '92vh'
+const NAVBAR_HEIGHT = '9vh'
+const NAV_ON_MOBILE_HEIGHT = '91vh'
 
 const Nav = () => {
+  const toggleNav = () => {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('nav-active')
+  }
+
   return (
     <NavBar>
       <NavLogo>
         <img src={logo} alt=""/>
       </NavLogo>
-      <NavLinks>
+      <NavLinks className={`nav-links`}>
         <NavLinkList><NavLink to={`#`}>Home</NavLink></NavLinkList>
         <NavLinkList><NavLink to={`#`}>About</NavLink></NavLinkList>
         <NavLinkList><NavLink to={`#`}>Services</NavLink></NavLinkList>
       </NavLinks>
-      <Hamburger>
+      <Hamburger className={`hamburger`} onClick={toggleNav}>
         <HamburgerLine />
         <HamburgerLine />
         <HamburgerLine />
@@ -38,7 +43,8 @@ const NavBar = styled.nav`
   position: fixed;
   width: 100%;
   z-index: 1000;
-  padding: 0 5%
+  padding: 0 5%;
+  box-shadow: 1px 0px 1px 1px #eee 
 `
 
 const NavLinks = styled.ul`
@@ -46,6 +52,7 @@ const NavLinks = styled.ul`
   display: flex;
   justify-content: space-around;
   width: 25%;
+  transition: all 0.4s ease-out;
   
   @media screen and (max-width: 850px){
     width: 40%;
@@ -54,13 +61,14 @@ const NavLinks = styled.ul`
   @media screen and (max-width: ${BREAK_POINT}){
     flex-direction: column;
     position: absolute;
-    background: ${COLORS.primaryColor};
+    background-color: ${COLORS.primaryColor};
     top:  ${NAVBAR_HEIGHT};
     height: ${NAV_ON_MOBILE_HEIGHT};
     right: 0px;
     width: 100%;
     justify-content: center;
     align-items: center;
+    transform: translateY(100%)
   }
 `
 
