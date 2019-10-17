@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../../content/assets/logo-1.png'
+import logo from '../../content/assets/logo2.png'
 import { Link } from "gatsby"
 import {COLORS} from '../utils/constants'
 
@@ -42,32 +42,6 @@ const Nav = () => {
 }
 
 const NavBar = styled.nav`
-  background: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: ${NAVBAR_HEIGHT};
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  padding: 0 5%;
-  box-shadow: 1px 0px 1px 1px #eee 
-`
-
-const NavLinks = styled.ul`
-  margin: 0;
-  display: flex;
-  justify-content: space-around;
-  width: 25%;
-  transition: all 0.4s ease-out;
-  
-  @media screen and (max-width: 850px){
-    width: 40%;
-  }
-  
-  @media screen and (max-width: ${BREAK_POINT}){
-    flex-direction: column;
-    position: absolute;
     background-color: ${COLORS.primaryColor};
     top:  ${NAVBAR_HEIGHT};
     height: ${NAV_ON_MOBILE_HEIGHT};
@@ -89,6 +63,7 @@ const NavLinkList = styled.li`
 `
 const NavLink = styled(Link)`
   font-weight: 700;
+  color: white;
   
   @media screen and (max-width:  ${BREAK_POINT}){
     color: white;
@@ -113,7 +88,7 @@ const HamburgerLine = styled.div`
   margin: 5px;
   height: 2px; 
   width: 20px;
-  background: ${COLORS.primaryColor};
+  background: white;
   padding: 0;
   transition: all 0.4s;
 `
