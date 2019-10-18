@@ -27,8 +27,7 @@ const Nav = () => {
   return (
     <NavBar>
       <NavLogo>
-        {/*<img src={logo} alt=""/>*/}
-        <Logo/>
+        <Link to='/'><Logo/></Link>
       </NavLogo>
       <NavLinks className={`nav-links`}>
         <NavLinkList><NavLink to={`#`}>Home</NavLink></NavLinkList>
