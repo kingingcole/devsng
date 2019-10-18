@@ -49,7 +49,7 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: ${NAVBAR_HEIGHT};
+  height: ${NAVBAR_HEIGHT};
   position: fixed;
   width: 100%;
   z-index: 1000;
@@ -92,6 +92,7 @@ const NavLinkList = styled.li`
 const NavLink = styled(Link)`
   font-weight: 700;
   color: white;
+  opacity: 0.9;
 
   @media screen and (max-width:  ${BREAK_POINT}){
     font-size: 20px
