@@ -1,31 +1,34 @@
-import React from 'react'
-import styled from 'styled-components'
-import logo from '../../content/assets/logo2.png'
+import React from "react"
+import styled from "styled-components"
+import logo from "../../content/assets/logo-1.png"
 import { Link } from "gatsby"
-import {COLORS} from '../utils/constants'
+import { COLORS } from "../utils/constants"
 
 
-const BREAK_POINT = '600px'
-const NAVBAR_HEIGHT = '9vh'
-const NAV_ON_MOBILE_HEIGHT = '91vh'
+import Logo from "../icons/Logo2"
+
+const BREAK_POINT = "600px"
+const NAVBAR_HEIGHT = "9vh"
+const NAV_ON_MOBILE_HEIGHT = "91vh"
 
 const Nav = () => {
   const toggleNav = () => {
-    const navLinks = document.querySelector('.nav-links');
-    const hamburgerLines = document.querySelectorAll('.hamburger-line');
-    navLinks.classList.toggle('nav-active');
+    const navLinks = document.querySelector(".nav-links")
+    const hamburgerLines = document.querySelectorAll(".hamburger-line")
+    navLinks.classList.toggle("nav-active")
 
-    const hamburgerLines_one_and_three = [hamburgerLines[0], hamburgerLines[2]];
+    const hamburgerLines_one_and_three = [hamburgerLines[0], hamburgerLines[2]]
     hamburgerLines_one_and_three.forEach(hamburgerLine => {
-      hamburgerLine.classList.toggle('line1and3_active')
+      hamburgerLine.classList.toggle("line1and3_active")
     })
-    hamburgerLines[1].classList.toggle('line2_active')
+    hamburgerLines[1].classList.toggle("line2_active")
   }
 
   return (
     <NavBar>
       <NavLogo>
-        <img src={logo} alt=""/>
+        {/*<img src={logo} alt=""/>*/}
+        <Logo/>
       </NavLogo>
       <NavLinks className={`nav-links`}>
         <NavLinkList><NavLink to={`#`}>Home</NavLink></NavLinkList>
@@ -42,6 +45,31 @@ const Nav = () => {
 }
 
 const NavBar = styled.nav`
+  background: ${COLORS.primaryColor};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: ${NAVBAR_HEIGHT};
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 5%;
+`
+
+const NavLinks = styled.ul`
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  transition: all 0.4s ease-out;
+  
+  @media screen and (max-width: 850px){
+    width: 40%;
+  }
+  
+  @media screen and (max-width: ${BREAK_POINT}){
+    flex-direction: column;
+    position: absolute;
     background-color: ${COLORS.primaryColor};
     top:  ${NAVBAR_HEIGHT};
     height: ${NAV_ON_MOBILE_HEIGHT};
@@ -64,9 +92,8 @@ const NavLinkList = styled.li`
 const NavLink = styled(Link)`
   font-weight: 700;
   color: white;
-  
+
   @media screen and (max-width:  ${BREAK_POINT}){
-    color: white;
     font-size: 20px
   }
 `
