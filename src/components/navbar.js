@@ -37,7 +37,7 @@ const Nav = () => {
       <Hamburger className={`hamburger`} onClick={toggleNav}>
         <HamburgerLine className={`hamburger-line`}/>
         <HamburgerLine className={`hamburger-line`}/>
-        <HamburgerLine+ className={`hamburger-line`}/>
+        <HamburgerLine className={`hamburger-line`}/>
       </Hamburger>
     </NavBar>
   )
