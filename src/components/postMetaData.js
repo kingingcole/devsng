@@ -57,9 +57,6 @@ const MetaData = styled.div`
   margin: 5px auto;
 `
 
-const PostDetails = styled.span`
-`
-
 const AuthorAvatar = styled(Img)`
   border-radius: 50%;
   padding: 10px;
