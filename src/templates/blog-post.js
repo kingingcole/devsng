@@ -65,8 +65,9 @@ const ArticleHead = styled.div`
 `
 
 const FeaturedImage = styled(Img)`
-  margin: 20px
-`
+  @media (min-width: 570px) {
+    margin: 5%
+  }`
 const ArticleText = styled.section`
   max-width: ${MAX_WIDTH} ;
   margin: 20px auto;

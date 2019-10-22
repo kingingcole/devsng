@@ -33,15 +33,12 @@ const PostCard = ({ title, tags, description, url, readingTime, image, date, aut
                          __html: description,
                        }}
           />
-
+          <PostMetaData readingTime={readingTime} date={date} author={author} hideAuthorDetails={hideAuthorDetails}/>
         </div>
         {image &&
         <div className="col-3 col-md-3 text-right">
           <FeaturedImage sizes={image}/>
         </div>}
-        <div className="col-12">
-          <PostMetaData readingTime={readingTime} date={date} author={author} hideAuthorDetails={hideAuthorDetails}/>
-        </div>
       </div>
     </PostCardWrapper>
   )
@@ -76,7 +73,6 @@ const FeaturedImage = styled(Img)`
   max-height: 150px;
   max-width: 150px;
   margin-left: auto;
-  border-radius: 3px
 `
 
 const Description = styled.p`

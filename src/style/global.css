@@ -6,7 +6,8 @@
 
 blockquote {
     border-left: 4px solid #14957D;
-    padding-left: 14px
+    background: #d8efeaa6;
+    padding-left: 14px;
 }
 
 a {
@@ -20,6 +21,7 @@ a:hover, a:focus {
     color: #90c695 !important;
     /*text-decoration: underline !important;*/
 }
+
 
 body {
     background: white
@@ -50,4 +52,8 @@ p {
 
 .line2_active {
     width: 15px !important;
+}
+
+code {
+    font-size: 0.7em !important
 }
