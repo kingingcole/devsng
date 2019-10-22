@@ -20,6 +20,7 @@ class BlogPostTemplate extends React.Component {
     const { title } = post.frontmatter
     const { date } = post.frontmatter
     const { author } = post.frontmatter
+    const { altText } = post.frontmatter
     const { description } = post.frontmatter
     const readingTime = post.fields.readingTime.text
     const { featuredImage } = post.frontmatter
@@ -43,7 +44,7 @@ class BlogPostTemplate extends React.Component {
               <PostMetaData readingTime={readingTime} date={date} author={author} className='col-12 mx-auto'/>
             </div>
           </ArticleHead>
-          {featuredImage && <FeaturedImage sizes={image}/>}
+          {featuredImage && <FeaturedImage sizes={image} alt={altText || `featured image for ${title}`}/>}
           <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
         </ArticleWrapper>
       </Layout>
@@ -68,6 +69,7 @@ const FeaturedImage = styled(Img)`
   @media (min-width: 570px) {
     margin: 5%
   }`
+
 const ArticleText = styled.section`
   max-width: ${MAX_WIDTH} ;
   margin: 20px auto;
@@ -113,6 +115,7 @@ export const pageQuery = graphql`
         date(fromNow: true)
         description
         author
+        altText
         featuredImage {
           childImageSharp {
             fluid(quality: 90, maxWidth: 3060) {
