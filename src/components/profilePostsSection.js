@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 import PostCard from "./postCard"
+import {Link} from 'gatsby'
 
 
 const ProfilePostsSection = ({ posts }) => {
@@ -9,7 +10,7 @@ const ProfilePostsSection = ({ posts }) => {
     <>
       <PostsWrapper className={`container`}>
         <Text>{posts.length > 1 ? 'Posts' : 'Post'}  <PostCount>{posts.length}</PostCount></Text>
-        {posts.map(({ node }) => {
+        {posts.length > 1 ? posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const description = node.frontmatter.description || node.excerpt
           const { slug } = node.fields
@@ -40,7 +41,12 @@ const ProfilePostsSection = ({ posts }) => {
               author={author}
             />
           )
-        })}
+        }) : (
+          <div>
+            <h5>This user has a profile but no posts yet!</h5>
+            <p>If this is you, click <Link to='/post/submitting-a-post/'>here</Link> to learn how to submit a post or <a href="https://github.com/kingingcole/devsng/pull/new/master">create a pull requst</a>.</p>
+          </div>
+        )}
       </PostsWrapper>
     </>
   )

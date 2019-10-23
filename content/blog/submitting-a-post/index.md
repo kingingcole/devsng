@@ -1,7 +1,7 @@
 ---
 title: Submitting a blog post on Devs NG
 date: "2019-10-21T22:12:03.284Z"
-description: "Guide on how to submit a blog post on Devs NG publishing platform"
+description: "Definitive guide on how to submit a blog post for publishing on Devs NG publishing platform"
 featuredImage: "./featured-image.png"
 
 published: true
