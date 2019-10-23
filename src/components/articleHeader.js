@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import {COLORS} from '../utils/constants'
+import header from '../../content/assets/header-bg.png'
 
 
 const ArticleHeader = () => {
@@ -15,6 +16,10 @@ const ArticleHeader = () => {
 const HeaderWrapper = styled.div`
   padding: 30px 0;
   background: ${COLORS.primaryColor};
+  background-image: url(${header});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   
   @media (max-width: 570px) {
     display: none

@@ -4,6 +4,7 @@ import { COLORS } from "../utils/constants"
 import Img from "gatsby-image"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 import FeatherIcon from "feather-icons-react"
+import header from '../../content/assets/header-bg.png'
 
 
 const ProfileHeader = ({ name, avatar, links }) => {
@@ -29,6 +30,10 @@ const HeaderWrapper = styled.div`
   background: ${COLORS.primaryColor};
   padding: 0 10px;
   margin-bottom: 80px;
+  background-image: url(${header});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   
   @media (max-width: 570px) {
     height: 100px;
