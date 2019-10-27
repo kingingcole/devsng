@@ -31,7 +31,7 @@ const Nav = () => {
       <NavLinks className={`nav-links`}>
         <NavLinkList><NavLink to={`#`}>Home</NavLink></NavLinkList>
         <NavLinkList><NavLink to={`#`}>About</NavLink></NavLinkList>
-        <NavLinkList><NavLink to={`#`}>Services</NavLink></NavLinkList>
+        <NavLinkList><NavLink to={`/guides`}>Guides</NavLink></NavLinkList>
       </NavLinks>
       <Hamburger className={`hamburger`} onClick={toggleNav}>
         <HamburgerLine className={`hamburger-line`}/>
