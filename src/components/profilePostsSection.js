@@ -6,10 +6,12 @@ import {Link} from 'gatsby'
 
 
 const ProfilePostsSection = ({ posts }) => {
+  console.log(posts.length)
+
   return (
       <PostsWrapper>
         <Text>{posts.length > 1 ? 'Posts' : 'Post'}  <PostCount>{posts.length}</PostCount></Text>
-        {posts.length > 1 ? posts.map(({ node }) => {
+        {posts.length > 0 ? posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const description = node.frontmatter.description || node.excerpt
           const { slug } = node.fields
