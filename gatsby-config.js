@@ -99,8 +99,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Publication - Devs NG`,
-        short_name: `Publication - Devs NG`,
+        name: `Devs NG`,
+        short_name: `Devs NG`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#14957D`,
