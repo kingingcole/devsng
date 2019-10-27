@@ -12,9 +12,6 @@ const PostCard = ({ title, tags, description, url, readingTime, image, date, aut
     description = description.slice(0, 150) + "..."
   }
 
-  console.log(tags)
-
-
   return (
     <PostCardWrapper>
       <div className="row">
