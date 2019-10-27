@@ -77,11 +77,7 @@ font-size: 20px;
 line-height: 29px;
 color: #4D4141;
 margin-bottom: 5px;
-max-width: 200px
-
-@media (max-width: 570px) {
-    font-size: 12px;
-  }
+max-width: 700px !important;
   
 `
 
