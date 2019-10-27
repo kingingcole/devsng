@@ -6,7 +6,7 @@ featuredImage: "./featured-image.png"
 published: true
 author: emeruche-cole
 type: post
-tags: ["admin", "tutorial"]
+tags: ["admin", "guide"]
 ---
 
 Hey there!
