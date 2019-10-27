@@ -56,11 +56,11 @@ export default ProfilePostsSection
 const PostsWrapper = styled.section`
   max-width: ${PAGE_MAX_WIDTH};
   margin: auto;
-  padding: 30px 10px;
+  padding: 20px 10px 0px 10px;
 `
 
 const Text = styled.h3`
-  margin-bottom: 26px;
+  margin-bottom: 5px;
   font-size: 28px;
   font-weight: bold;
   line-height: 34px;

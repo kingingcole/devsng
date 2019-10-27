@@ -17,7 +17,7 @@ const ProfileHeader = ({ name, avatar, links }) => {
         <ProfileLinks>
           {twitter && <Link href={twitter}><FeatherIcon icon="twitter" size="18"/></Link>}
           {github && <Link href={github}><FeatherIcon icon="github" size="18"/></Link>}
-          {email && <Link href={email}><FeatherIcon icon="mail" size="18"/></Link>}
+          {email && <Link href={`mailto:${email}`}><FeatherIcon icon="mail" size="18"/></Link>}
           {website && <Link href={website}><FeatherIcon icon="link" size="18"/></Link>}
         </ProfileLinks>
       </Container>
