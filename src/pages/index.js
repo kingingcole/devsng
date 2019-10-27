@@ -32,7 +32,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <ArticleHeader/>
+        <ArticleHeader largeText="Articles" smallText="Tech articles from some of the best software developers in Nigeria."/>
         <PostsWrapper>
           <Text>Latest Articles</Text>
           {posts.map(({ node }, i) => {
