@@ -1,23 +1,33 @@
-blockquote {
-    border-left: 4px solid #14957D;
-    padding-left: 14px
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-a{
+blockquote {
+    border-left: 4px solid #14957D;
+    background: #d8efeaa6;
+    padding-left: 14px;
+}
+
+a {
     border-bottom: none !important;
     text-decoration: none !important;
     box-shadow: none;
     color: #14957D;
 }
 
-a:hover, a:focus{
-    color: #90c695;
+a:hover, a:focus {
+    color: #90c695 !important;
     /*text-decoration: underline !important;*/
 }
 
-body{ background: whitesmoke}
 
-img{
+body {
+    background: white
+}
+
+img {
     margin: 0 !important
 }
 
@@ -27,6 +37,23 @@ h3,
 h4,
 h5,
 h6,
-p{
-    font-family: 'Lato', sans-serif !important;
+p {
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.nav-active {
+    display: flex !important;
+    transform: translateY(0) !important;
+}
+
+.line1and3_active {
+    width: 25px !important;
+}
+
+.line2_active {
+    width: 15px !important;
+}
+
+code {
+    font-size: 0.7em !important
 }

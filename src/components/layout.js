@@ -11,7 +11,7 @@ class Layout extends React.Component {
     return (
       <>
         <Helmet>
-          <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Vibes&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Fira+Sans+Condensed|Vibes&display=swap" rel="stylesheet" />
         </Helmet>
         <header><Nav/></header>
         <div
@@ -31,11 +31,7 @@ class Layout extends React.Component {
 }
 
 const Main = styled.main`
-  margin-top: 69px;
-  
-   @media (max-width: 570px) {
-    margin-top: 57px
-  }
+  margin-top: 9vh
 `
 
 export default Layout

@@ -15,11 +15,12 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    // const { previous, next } = this.props.pageContext
 
     const { title } = post.frontmatter
     const { date } = post.frontmatter
     const { author } = post.frontmatter
+    const { altText } = post.frontmatter
     const { description } = post.frontmatter
     const readingTime = post.fields.readingTime.text
     const { featuredImage } = post.frontmatter
@@ -37,13 +38,13 @@ class BlogPostTemplate extends React.Component {
           description={description || post.excerpt}
         />
         <ArticleWrapper>
-          <ArticleHead>
-            <Title>{post.frontmatter.title}</Title>
+          <ArticleHead className=''>
+            <Title className=''>{post.frontmatter.title}</Title>
+            <div className="row">
+              <PostMetaData readingTime={readingTime} date={date} author={author} className='col-12 mx-auto'/>
+            </div>
           </ArticleHead>
-          {featuredImage && <FeaturedImage sizes={image}/>}
-          <div className="text-left" style={{ maxWidth: MAX_WIDTH, margin: "auto" }}>
-            <PostMetaData readingTime={readingTime} date={date} author={author} center={true}/>
-          </div>
+          {featuredImage && <FeaturedImage sizes={image} alt={altText || `featured image for ${title}`}/>}
           <ArticleText dangerouslySetInnerHTML={{ __html: post.html }}/>
         </ArticleWrapper>
       </Layout>
@@ -59,18 +60,20 @@ const ArticleWrapper = styled.article`
   max-width: ${PAGE_MAX_WIDTH}
 `
 
-const ArticleHead = styled.section`
+const ArticleHead = styled.div`
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `
 
 const FeaturedImage = styled(Img)`
-  margin: 20px
-`
+  @media (min-width: 570px) {
+    margin: 5%
+  }`
+
 const ArticleText = styled.section`
-  max-width: ${MAX_WIDTH};
+  max-width: ${MAX_WIDTH} ;
   margin: 20px auto;
-  font-size: 1em;
+  font-size: 1.25em;
   font-family: 'Lato', sans-serif;
 `
 
@@ -79,10 +82,13 @@ const Title = styled.h1`
   font-weight: 900;
   font-size: 48px;
   max-width: 700px;
-  margin: auto;
+  margin: 10px auto;
+  margin-bottom: 5px;
+  line-height: 64px;
   
   @media (max-width: 570px) {
     font-size: 30px;
+    line-height: 40px;
   }
 `
 
@@ -109,6 +115,7 @@ export const pageQuery = graphql`
         date(fromNow: true)
         description
         author
+        altText
         featuredImage {
           childImageSharp {
             fluid(quality: 90, maxWidth: 3060) {

@@ -5,6 +5,7 @@ published: true
 featuredImage: "./featured-image.jpg"
 author: test-user
 type: post
+tags: ["react", "gatsby"]
 ---
 
 Wow! I love blogging so much already.

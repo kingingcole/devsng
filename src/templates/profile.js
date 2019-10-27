@@ -90,6 +90,7 @@ export const userQuery = graphql`
             description
             author
             date(fromNow: true)
+            tags
             featuredImage {
               childImageSharp {
                 fluid(quality: 90, maxWidth: 4160) {

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { PAGE_MAX_WIDTH } from "../utils/constants"
 import PostCard from "./postCard"
+import {Link} from 'gatsby'
 
 
 const ProfilePostsSection = ({ posts }) => {
@@ -9,7 +10,7 @@ const ProfilePostsSection = ({ posts }) => {
     <>
       <PostsWrapper className={`container`}>
         <Text>{posts.length > 1 ? 'Posts' : 'Post'}  <PostCount>{posts.length}</PostCount></Text>
-        {posts.map(({ node }) => {
+        {posts.length > 1 ? posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const description = node.frontmatter.description || node.excerpt
           const { slug } = node.fields
@@ -18,6 +19,8 @@ const ProfilePostsSection = ({ posts }) => {
           const { author } = node.frontmatter
           const readingTime = node.fields.readingTime.text
           const { featuredImage } = node.frontmatter
+          const { tags } = node.frontmatter
+          console.log(tags)
 
           let image
           if (featuredImage) {
@@ -26,6 +29,7 @@ const ProfilePostsSection = ({ posts }) => {
 
           return (
             <PostCard
+              tags={tags}
               hideAuthorDetails={true}
               key={slug}
               description={description}
@@ -37,7 +41,12 @@ const ProfilePostsSection = ({ posts }) => {
               author={author}
             />
           )
-        })}
+        }) : (
+          <div>
+            <h5>This user has a profile but no posts yet!</h5>
+            <p>If this is you, click <Link to='/post/submitting-a-post/'>here</Link> to learn how to submit a post or <a href="https://github.com/kingingcole/devsng/pull/new/master">create a pull requst</a>.</p>
+          </div>
+        )}
       </PostsWrapper>
     </>
   )
@@ -52,13 +61,14 @@ const PostsWrapper = styled.div`
 `
 
 const Text = styled.h3`
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-weight: bold
+  margin-bottom: 26px;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 34px;
 `
 
 const PostCount = styled.span`
-  font-size: 40px;
+  font-size: 50px;
   font-family: 'Vibes', cursive;
   margin-left: 6px;
   font-style: italic;
