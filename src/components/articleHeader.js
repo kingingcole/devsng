@@ -4,11 +4,11 @@ import {COLORS} from '../utils/constants'
 import header from '../../content/assets/header-bg.png'
 
 
-const ArticleHeader = () => {
+const ArticleHeader = ({largeText, smallText}) => {
   return (
     <HeaderWrapper>
-      <LargeText>Articles</LargeText>
-      <SmallText>Tech articles from some of the best software developers in Nigeria.</SmallText>
+      <LargeText>{largeText}</LargeText>
+      <SmallText>{smallText}</SmallText>
     </HeaderWrapper>
   )
 }
