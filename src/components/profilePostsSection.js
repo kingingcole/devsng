@@ -7,8 +7,7 @@ import {Link} from 'gatsby'
 
 const ProfilePostsSection = ({ posts }) => {
   return (
-    <>
-      <PostsWrapper className={`container`}>
+      <PostsWrapper>
         <Text>{posts.length > 1 ? 'Posts' : 'Post'}  <PostCount>{posts.length}</PostCount></Text>
         {posts.length > 1 ? posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -20,7 +19,6 @@ const ProfilePostsSection = ({ posts }) => {
           const readingTime = node.fields.readingTime.text
           const { featuredImage } = node.frontmatter
           const { tags } = node.frontmatter
-          console.log(tags)
 
           let image
           if (featuredImage) {
@@ -48,13 +46,12 @@ const ProfilePostsSection = ({ posts }) => {
           </div>
         )}
       </PostsWrapper>
-    </>
   )
 }
 
 export default ProfilePostsSection
 
-const PostsWrapper = styled.div`
+const PostsWrapper = styled.section`
   max-width: ${PAGE_MAX_WIDTH};
   margin: auto;
   padding: 30px 10px;

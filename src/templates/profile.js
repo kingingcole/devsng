@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProfilePostsSection from '../components/profilePostsSection'
 import ProfileHeader from '../components/profileHeader'
-
+import ProfileBioSection from '../components/profileBioSection'
 
 
 class ProfileTemplate extends React.Component {
@@ -15,8 +15,10 @@ class ProfileTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     // const { slug, authorIdentifier } = this.props.pageContext
 
+    // profile details
     const { name } = author.frontmatter
     const {avatar} = author.frontmatter
+    const { bio } = author.frontmatter
 
     // social links
     const {twitter} = author.frontmatter
@@ -38,6 +40,7 @@ class ProfileTemplate extends React.Component {
           description={`Profile of ${name} | DevsNg`}
         />
         <ProfileHeader avatar={avatar} name={name} links={links}/>
+        { bio && <ProfileBioSection bio={bio} /> }
         <ProfilePostsSection posts={posts} siteTitle={siteTitle}/>
       </Layout>
       )
@@ -70,6 +73,7 @@ export const userQuery = graphql`
         twitter
         github
         email
+        bio
         website
         avatar{
           childImageSharp {
