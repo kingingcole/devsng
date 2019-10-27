@@ -1,7 +1,7 @@
 ---
 name: Emeruche Ikenna
 type: profile
-bio: A very good looking guy
+bio: Front-end developer with React, Redux and Gatsby. Building DevsNg. JavaScript. Python. Django. Nigeria.
 avatar: "./avatar.jpg"
 twitter: https://twitter.com/kingingcole
 website: https://coleruche.com
