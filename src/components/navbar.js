@@ -29,9 +29,9 @@ const Nav = () => {
         <Link to='/'><Logo/></Link>
       </NavLogo>
       <NavLinks className={`nav-links`}>
-        <NavLinkList><NavLink to={`#`}>Home</NavLink></NavLinkList>
-        <NavLinkList><NavLink to={`#`}>About</NavLink></NavLinkList>
-        <NavLinkList><NavLink to={`/guides`}>Guides</NavLink></NavLinkList>
+        <NavLinkList><NavLink to={`/`} activeClassName='active-link'>Home</NavLink></NavLinkList>
+        <NavLinkList><NavLink to={`#`} activeClassName='active-link'>About</NavLink></NavLinkList>
+        <NavLinkList><NavLink to={`/guides`} activeClassName='active-link'>Guides</NavLink></NavLinkList>
       </NavLinks>
       <Hamburger className={`hamburger`} onClick={toggleNav}>
         <HamburgerLine className={`hamburger-line`}/>

@@ -17,9 +17,8 @@ a {
     color: #14957D;
 }
 
-a:hover, a:focus {
+a:hover, a:focus, .active-link{
     color: #90c695 !important;
-    /*text-decoration: underline !important;*/
 }
 
 
