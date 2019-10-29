@@ -18,7 +18,8 @@ class BlogIndex extends React.Component {
     const PostsWrapper = styled.div`
       max-width: ${PAGE_MAX_WIDTH};
       margin: auto;
-      padding: 20px 10px
+      padding: 20px 10px;
+      padding-bottom: 0px;
     `
 
     const Text = styled.h1`   
