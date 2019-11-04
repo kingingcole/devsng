@@ -1,9 +1,8 @@
 ---
 title: Submitting a blog post on DevsNG
-date: "2019-10-21T22:12:03.284Z"
+date: "2019-11-05"
 description: "Definitive guide on how to submit a blog post for publishing on DevsNG publishing platform"
 featuredImage: "./featured-image.png"
-
 published: true
 author: emeruche-cole
 type: post

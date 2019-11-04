@@ -1,6 +1,6 @@
 ---
 title: My Top Plugins for a GatsbyJS Powered Blog
-date: "2019-08-10T22:40:32.169Z"
+date: "2019-11-05"
 featuredImage: "./featured-image.jpg"
 type: post
 description: A look into what I think are my best plugins for a blog site created with GatsbyJS and Markdown
