@@ -60,3 +60,5 @@ tags: ["react", "gatsby"]
 5. If you are satisfied with your articles and would love to submit it for review and publishing, commit your changes to your own forked copy and you can go ahead and [submit a PR](https://github.com/kingingcole/devsng/pull/new/master). Our review process is quite simple and short. We try to check if meets community standard. To help quicken the process, please ensure your post is well formatted and includes code samples where needed. If after review we discover an issue that prevents us from publishing it, we will notify you via the Github PR conversation.
 
 Thanks, and we can't wait to get your articles coming in.
+
+<a href='https://github.com/kinging/devsng/compare' class='open-PR-btn'>Open PR</a>
