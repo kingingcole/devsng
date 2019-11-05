@@ -61,4 +61,4 @@ tags: ["react", "gatsby"]
 
 Thanks, and we can't wait to get your articles coming in.
 
-<a href='https://github.com/kinging/devsng/compare' class='open-PR-btn'>Open PR</a>
+<a href='https://github.com/kingingcole/devsng/compare' class='open-PR-btn'>Open PR</a>
