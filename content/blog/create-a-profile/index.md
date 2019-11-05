@@ -1,6 +1,6 @@
 ---
 title: How to create a profile on DevsNG
-date: "2019-10-21T22:12:03.284Z"
+date: "2019-11-05"
 description: "Definitive guide on how to create a profile on DevsNG platform"
 published: true
 author: emeruche-cole

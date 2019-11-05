@@ -6,7 +6,7 @@ import { COLORS } from "../utils/constants"
 
 import Logo from "../icons/Logo2"
 
-const BREAK_POINT = "600px"
+const BREAK_POINT = "700px"
 const NAVBAR_HEIGHT = "9vh"
 const NAV_ON_MOBILE_HEIGHT = "91vh"
 
@@ -30,8 +30,8 @@ const Nav = () => {
       </NavLogo>
       <NavLinks className={`nav-links`}>
         <NavLinkList><NavLink to={`/`} activeClassName='active-link'>Home</NavLink></NavLinkList>
-        <NavLinkList><NavLink to={`#`} activeClassName='active-link'>About</NavLink></NavLinkList>
         <NavLinkList><NavLink to={`/guides`} activeClassName='active-link'>Guides</NavLink></NavLinkList>
+        <NavLinkList><NavLink to={`/post/submitting-a-post/`} activeClassName='active-link'>Submit Post</NavLink></NavLinkList>
       </NavLinks>
       <Hamburger className={`hamburger`} onClick={toggleNav}>
         <HamburgerLine className={`hamburger-line`}/>
@@ -61,8 +61,8 @@ const NavLinks = styled.ul`
   width: 25%;
   transition: all 0.4s ease-out;
   
-  @media screen and (max-width: 850px){
-    width: 40%;
+  @media screen and (max-width: 970px){
+    width: 35%;
   }
   
   @media screen and (max-width: ${BREAK_POINT}){

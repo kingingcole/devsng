@@ -17,7 +17,7 @@ a {
     color: #14957D;
 }
 
-a:hover, a:focus, .active-link{
+a:hover, a:focus, .active-link {
     color: #90c695 !important;
 }
 
@@ -55,4 +55,16 @@ p {
 
 code {
     font-size: 0.7em !important
+}
+
+.open-PR-btn {
+    padding: 10px 20px;
+    background: #14957D;
+    color: white;
+    border-radius: 3px;
+}
+
+.open-PR-btn:hover{
+    background: #90c695;
+    color: white !important
 }
