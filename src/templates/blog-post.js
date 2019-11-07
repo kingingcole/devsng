@@ -57,7 +57,8 @@ export default BlogPostTemplate
 const ArticleWrapper = styled.article`
   padding: 20px 10px;
   margin: auto;
-  max-width: ${PAGE_MAX_WIDTH}
+  max-width: ${PAGE_MAX_WIDTH};
+  
 `
 
 const ArticleHead = styled.div`
@@ -75,6 +76,11 @@ const ArticleText = styled.section`
   margin: 20px auto;
   font-size: 1.25em;
   font-family: 'Lato', sans-serif;
+  
+  @media (max-width: 570px) {
+    font-size: 1.2em;
+    margin: auto 5px
+  }
 `
 
 const Title = styled.h1`
